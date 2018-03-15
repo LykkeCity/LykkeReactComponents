@@ -1,0 +1,95 @@
+@import '../utils';
+
+.select-dropdown {
+  &__control {
+    border-radius: $border-radius;
+    border: solid 1px $gray-25;
+    cursor: pointer;
+    height: 50px;
+    line-height: 3;
+
+    @include rem(padding, 0 20px);
+
+    .icon {
+      position: absolute;
+      top: 17px;
+      right: 6px;
+      color: rgba($secondary, 0.8) !important;
+    }
+  }
+
+  &__container.dropdown__container {
+    display: none;
+    margin-left: -215px;
+  }
+
+  &.dropdown_open {
+    .dropdown__container {
+      display: inherit;
+    }
+  }
+
+  &__placeholder {
+    opacity: 0.6;
+  }
+
+  &__search {
+    @include rem(padding, 10px);
+
+    input {
+      @include rem(padding, 15px);
+    }
+  }
+
+  &__option {
+    border-radius: $border-radius;
+
+    &_focused {
+      background-color: $gray-5;
+    }
+
+    &_selected {
+      background-color: $blue;
+    }
+  }
+
+  .dropdown__nav {
+    box-shadow: 0 8px 50px 0 rgba(63, 77, 96, 0.4),
+      0 5px 5px 0 rgba(63, 77, 96, 0.05);
+    margin: 0;
+    width: 400px;
+
+    .select-dropdown {
+      &__option {
+        a {
+          @include rem(padding-left, 20px);
+          @include rem(padding-right, 15px);
+        }
+
+        &_selected {
+          a {
+            color: $white;
+          }
+        }
+      }
+    }
+
+    .dropdown-list__item {
+      @include rem(padding, 0);
+
+      &_category {
+        @include rem(margin-top, 5px);
+        @include rem(padding-top, 5px);
+        @include rem(padding-bottom, 5px);
+
+        &:first-child {
+          @include rem(margin-top, -5px);
+        }
+      }
+
+      &:hover {
+        background: inherit;
+      }
+    }
+  }
+}
