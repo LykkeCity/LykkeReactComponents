@@ -4,9 +4,8 @@ This project is a library of React Components for Lykke projects.
 
 - [Getting started](#getting-started)
   - [yarn](#yarn)
-  - [yarn start](#yarn-start)
-  - [yarn test](#yarn-test)
   - [yarn build](#yarn-build)
+  - [yarn publish](#yarn-publish)
 
 ### Getting started
 
