@@ -2,6 +2,7 @@ import typescript from 'rollup-plugin-typescript';
 import uglify from 'rollup-plugin-uglify';
 import nodeResolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
+import copy from 'rollup-plugin-copy';
 import css from 'rollup-plugin-css-porter';
 import {minify} from 'uglify-es';
 
@@ -15,6 +16,9 @@ export default {
     sourcemap: true
   },
   plugins: [
+    copy({
+      "node_modules/LykkeFramework/assets/fonts": "dist/fonts",
+    }),
     css({dest: 'dist/bundle/style.css'}),
     typescript({
       importHelpers: true,

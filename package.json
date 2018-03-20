@@ -1,11 +1,15 @@
 {
   "name": "lykke-react-components",
-  "version": "0.1.1",
+  "version": "0.1.7",
   "description": "React Components for Lykke projects",
   "keywords": [
     "Lykke"
   ],
   "license": "MIT",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/andreyzhylin/LykkeReactComponents.git"
+  },
   "scripts": {
     "precommit": "lint-staged",
     "test": "jest",
@@ -29,6 +33,7 @@
     "@types/react": "^16.0.18",
     "@types/react-dom": "^16.0.2",
     "LykkeFramework": "^0.3.40",
+    "bootstrap": "3",
     "classnames": "^2.2.5",
     "compass-mixins": "0.12.10",
     "enzyme": "^3.3.0",
@@ -44,6 +49,7 @@
     "rimraf": "^2.6.2",
     "rollup": "^0.56.5",
     "rollup-plugin-commonjs": "^9.1.0",
+    "rollup-plugin-copy": "^0.2.3",
     "rollup-plugin-css-porter": "^0.1.2",
     "rollup-plugin-node-resolve": "^3.2.0",
     "rollup-plugin-typescript": "^0.8.1",
