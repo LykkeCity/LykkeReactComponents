@@ -17,7 +17,11 @@ storiesOf('ClickOutside', module)
     ~~~
     `)(() =>
       <ClickOutside onClickOutside={action('clicked outside')}>
-        <div onClick={action('clicked inside')} className="btn btn-primary" style={{margin: 50}}>Click Outside</div>
+        <div className="container">
+          <div className="col-sm-2">
+            <div onClick={action('clicked inside')} className="btn btn-primary">Click Outside</div>
+          </div>
+        </div>
       </ClickOutside>
     )
   )
