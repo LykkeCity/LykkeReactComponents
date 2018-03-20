@@ -265,13 +265,13 @@ export class Select extends React.Component<SelectProps, SelectState> {
   }
 
   private getOptionLabel = (option: any) =>
-    option && option[this.props.labelKey];
+    String(option && option[this.props.labelKey]);
 
   private getOptionValue = (option: any) =>
     option && option[this.props.valueKey];
 
   private isVisible = (option: any) => {
-    return this.getOptionLabel(option).match(
+    return !!this.getOptionLabel(option).match(
       new RegExp(escapeRegExp(this.state.search), 'i')
     );
   };

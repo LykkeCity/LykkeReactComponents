@@ -36,8 +36,8 @@ const optGroups = [
 
 const options = [
   {
-    label: 'Foo',
-    value: 'foo'
+    label: 1,
+    value: '1'
   },
   {
     label: 'Bar',
@@ -231,7 +231,7 @@ test('Select should correctly render select control', () => {
   selectInstance.handleOptionClick(options[0]);
   expect(
     select.find('.select-dropdown__control .dropdown__control').text()
-  ).toBe(options[0].label);
+  ).toBe(String(options[0].label));
 
   select = mount(
     <Select
@@ -251,7 +251,7 @@ test('Select should correctly render select control', () => {
   selectInstance.handleOptionClick(options[0]);
   expect(
     select.find('.select-dropdown__control .dropdown__control').text()
-  ).toBe(options[0].label);
+  ).toBe(String(options[0].label));
 
   const selectRenderer = (option: any) => `foo${option.value}bar`;
   select = mount(
@@ -285,7 +285,7 @@ test('Select should correctly render option', () => {
       .find('.select-dropdown__option')
       .first()
       .text()
-  ).toBe(options[0].label);
+  ).toBe(String(options[0].label));
 
   const optionRenderer = (option: any) => `foo${option.value}bar`;
   select = mount(
