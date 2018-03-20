@@ -1,5 +1,7 @@
 ## Lykke React Components
 
+Docs: [Storybook](https://andreyzhylin.github.io/LykkeReactComponents)
+
 This project is a library of React Components for Lykke projects.
 
 - [Getting started](#getting-started)
@@ -24,3 +26,11 @@ Now library is ready to be published!
 #### `yarn publish`
 
 Publishes the library.
+
+#### `yarn run storybook`
+
+Starts docs server on port 6006
+
+#### `yarn run build-storybook`
+
+Builds docs
