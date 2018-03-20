@@ -82,7 +82,12 @@
       "prettier --write",
       "git add"
     ],
-    "src/**/*.{ts,tsx}": "tslint --fix"
+    "src/**/*.{ts,tsx}": "tslint --fix",
+    "stories/**/*.{ts,tsx,js,jsx,json,css,scss,sass}": [
+      "prettier --write",
+      "git add"
+    ],
+    "stories/**/*.{ts,tsx}": "tslint --fix"
   },
   "jest": {
     "transform": {
