@@ -199,6 +199,12 @@ export class Select extends React.Component<SelectProps, SelectState> {
     );
   };
 
+  handleSelectClose = () => {
+    this.setState({
+      isOpen: false
+    });
+  };
+
   render() {
     const {
       className,
@@ -215,6 +221,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
         className={classnames('select-dropdown', className)}
         isOpen={this.state.isOpen}
         onOpen={this.handleSelectOpen}
+        onClose={this.handleSelectClose}
       >
         <DropdownControl className="select-dropdown__control">
           {this.selectedOption ? (

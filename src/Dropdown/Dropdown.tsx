@@ -8,6 +8,7 @@ export interface DropdownProps {
   className?: string;
   isOpen?: boolean;
   onOpen?: () => void;
+  onClose?: () => void;
   tag?: string;
   trigger?: string;
 }
@@ -38,8 +39,12 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
           isOpen: !prevState.isOpen
         }),
         () => {
-          if (this.state.isOpen && this.props.onOpen) {
-            this.props.onOpen();
+          const toggleHandler = this.state.isOpen
+            ? this.props.onOpen
+            : this.props.onClose;
+
+          if (toggleHandler) {
+            toggleHandler();
           }
         }
       );
@@ -48,9 +53,16 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
 
   handleClickOutside = () => {
     if (this.props.trigger === 'click') {
-      this.setState({
-        isOpen: false
-      });
+      this.setState(
+        {
+          isOpen: false
+        },
+        () => {
+          if (this.props.onClose) {
+            this.props.onClose();
+          }
+        }
+      );
     }
   };
 
@@ -60,6 +72,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       className,
       isOpen,
       onOpen,
+      onClose,
       tag: Tag = 'div',
       trigger = 'hover',
       ...props
