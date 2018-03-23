@@ -3,12 +3,19 @@ import React from 'react';
 import {ClickOutside} from '../ClickOutside';
 import './style.css';
 
+export const DropdownPosition = {
+  BOTTOM: 'bottom',
+  RIGHT: 'right'
+};
+
 export interface DropdownProps {
   children?: React.ReactChild | React.ReactChild[];
   className?: string;
+  fullHeight?: boolean;
   isOpen?: boolean;
   onOpen?: () => void;
   onClose?: () => void;
+  position?: string;
   tag?: string;
   trigger?: string;
 }
@@ -53,12 +60,13 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
 
   handleClickOutside = () => {
     if (this.props.trigger === 'click') {
+      const wasOpen = this.state.isOpen;
       this.setState(
         {
           isOpen: false
         },
         () => {
-          if (this.props.onClose) {
+          if (wasOpen && this.props.onClose) {
             this.props.onClose();
           }
         }
@@ -70,9 +78,11 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     const {
       children,
       className,
+      fullHeight,
       isOpen,
       onOpen,
       onClose,
+      position = 'bottom',
       tag: Tag = 'div',
       trigger = 'hover',
       ...props
@@ -86,8 +96,10 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
           className={classnames(
             'dropdown',
             className,
-            this.state.isOpen ? 'dropdown_open' : '',
-            trigger === 'click' ? 'dropdown_clickable' : ''
+            {dropdown_open: this.state.isOpen},
+            {dropdown_right: position === DropdownPosition.RIGHT},
+            {dropdown_clickable: trigger === 'click'},
+            {dropdown_fullheight: fullHeight}
           )}
         >
           {children}

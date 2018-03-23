@@ -3,6 +3,26 @@
 @import '../../node_modules/LykkeFramework/assets/scss/partials/dropdown';
 
 .dropdown {
+  .dropdown__container {
+    .dropdown_right {
+      .dropdown__container {
+        margin: -13px -5px;
+
+        @media (max-width: $screen-mobile) {
+          margin: -9px -6px;
+        }
+      }
+    }
+
+    @media all and (max-width: $screen-landscape) {
+      display: initial;
+    }
+
+    @media (max-width: $screen-mobile) {
+      margin-left: -50px;
+    }
+  }
+
   &__nav {
     max-height: 410px;
     overflow-y: auto;
@@ -54,6 +74,16 @@
           @include rem(padding-bottom, 5px);
           @include rem(padding-top, 5px);
         }
+
+        .dropdown__control {
+          @include rem(line-height, 1.24);
+          @include rem(margin, -10px 0);
+          @include rem(padding, 10px 0);
+
+          a {
+            @include rem(padding, 0 20px);
+          }
+        }
       }
     }
 
@@ -79,6 +109,27 @@
       pointer-events: all;
 
       @include transform(translate(0, 0));
+    }
+  }
+
+  &_right {
+    .dropdown__container {
+      margin: -5px -5px;
+      top: 0;
+      left: 100%;
+      padding: 0 10px;
+    }
+  }
+
+  &_fullheight {
+    .dropdown__nav {
+      max-height: inherit;
+      overflow: visible;
+
+      .dropdown__nav {
+        max-height: 410px;
+        overflow-y: auto;
+      }
     }
   }
 }

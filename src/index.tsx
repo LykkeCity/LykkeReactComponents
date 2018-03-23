@@ -1,6 +1,7 @@
 import ClickOutside from './ClickOutside';
 
 import Dropdown from './Dropdown/Dropdown';
+import {DropdownPosition} from './Dropdown/Dropdown';
 import DropdownContainer from './Dropdown/DropdownContainer';
 import DropdownControl from './Dropdown/DropdownControl';
 import DropdownList from './Dropdown/DropdownList';
@@ -12,6 +13,7 @@ import Select from './Select/Select';
 export {
   ClickOutside,
   Dropdown,
+  DropdownPosition,
   DropdownContainer,
   DropdownControl,
   DropdownList,

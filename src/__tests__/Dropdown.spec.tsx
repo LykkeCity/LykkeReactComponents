@@ -43,10 +43,16 @@ test('Dropdown should be triggered by click or hover', () => {
   expect(dropdown.find('.dropdown_open').hostNodes()).toHaveLength(1);
 });
 
-test('Dropdown should call onOpen handler', () => {
+test('Dropdown should call onOpen and onClose handlers', () => {
   const handleOpen = jest.fn();
-  const dropdown = shallow(<Dropdown trigger="click" onOpen={handleOpen} />);
+  const handleClose = jest.fn();
+  const dropdown = shallow(
+    <Dropdown trigger="click" onOpen={handleOpen} onClose={handleClose} />
+  );
   expect(handleOpen).not.toBeCalled();
+  expect(handleClose).not.toBeCalled();
   dropdown.find('div').simulate('click');
   expect(handleOpen).toBeCalled();
+  dropdown.find('div').simulate('click');
+  expect(handleClose).toBeCalled();
 });

@@ -22,7 +22,7 @@ export const DropdownListItem: React.SFC<DropdownListItemProps> = ({
       {...attributes}
       className={classnames(
         'dropdown-list__item',
-        isCategory && 'dropdown-list__item_category',
+        {'dropdown-list__item_category': isCategory},
         className
       )}
     >

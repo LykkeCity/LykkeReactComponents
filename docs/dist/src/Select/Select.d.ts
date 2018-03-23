@@ -38,6 +38,7 @@ export declare class Select extends React.Component<SelectProps, SelectState> {
     handleOptionClick: (option: any) => void;
     handleSearchChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     handleSelectOpen: () => void;
+    handleSelectClose: () => void;
     render(): JSX.Element;
     private getOptionLabel;
     private getOptionValue;

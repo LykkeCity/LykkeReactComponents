@@ -26,8 +26,8 @@ export const Option: React.SFC<OptionProps> = ({
       <div
         className={classnames(
           'select-dropdown__option',
-          isFocused && 'select-dropdown__option_focused',
-          isSelected && 'select-dropdown__option_selected',
+          {'select-dropdown__option_focused': isFocused},
+          {'select-dropdown__option_selected': isSelected},
           className
         )}
       >
