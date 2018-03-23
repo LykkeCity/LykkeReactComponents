@@ -21,6 +21,7 @@ storiesOf('Dropdown', module).add(
       children?: React.ReactChild | React.ReactChild[];
       className?: string;
       fullHeight?: boolean;
+      isTooltip?: boolean;
       isOpen?: boolean;
       onOpen?: () => void;
       onClose?: () => void;
@@ -150,6 +151,22 @@ storiesOf('Dropdown', module).add(
         <Dropdown trigger="click" isOpen>
           <DropdownControl>
             <a className="btn btn-primary">Click me</a>
+          </DropdownControl>
+          <DropdownContainer>Opened</DropdownContainer>
+        </Dropdown>
+      </div>
+    </div>
+  ))
+);
+
+storiesOf('Dropdown', module).add(
+  'tooltip',
+  withInfo('')(() => (
+    <div className="container">
+      <div className="col-sm-2">
+        <Dropdown isTooltip>
+          <DropdownControl>
+            <a className="btn btn-primary">Hover me</a>
           </DropdownControl>
           <DropdownContainer>Opened</DropdownContainer>
         </Dropdown>

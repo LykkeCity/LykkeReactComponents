@@ -132,4 +132,16 @@
       }
     }
   }
+
+  &_tooltip {
+    .dropdown__nav {
+      overflow-y: initial;
+
+      &:after {
+        border: solid transparent;
+        border-width: 10px;
+        border-bottom-color: $white;
+      }
+    }
+  }
 }

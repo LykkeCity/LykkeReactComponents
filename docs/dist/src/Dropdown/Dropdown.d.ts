@@ -9,6 +9,7 @@ export interface DropdownProps {
     children?: React.ReactChild | React.ReactChild[];
     className?: string;
     fullHeight?: boolean;
+    isTooltip?: boolean;
     isOpen?: boolean;
     onOpen?: () => void;
     onClose?: () => void;

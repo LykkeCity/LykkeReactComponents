@@ -12,6 +12,7 @@ export interface DropdownProps {
   children?: React.ReactChild | React.ReactChild[];
   className?: string;
   fullHeight?: boolean;
+  isTooltip?: boolean;
   isOpen?: boolean;
   onOpen?: () => void;
   onClose?: () => void;
@@ -79,6 +80,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       children,
       className,
       fullHeight,
+      isTooltip,
       isOpen,
       onOpen,
       onClose,
@@ -99,7 +101,8 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
             {dropdown_open: this.state.isOpen},
             {dropdown_right: position === DropdownPosition.RIGHT},
             {dropdown_clickable: trigger === 'click'},
-            {dropdown_fullheight: fullHeight}
+            {dropdown_fullheight: fullHeight},
+            {dropdown_tooltip: isTooltip}
           )}
         >
           {children}
