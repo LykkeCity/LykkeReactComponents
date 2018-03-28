@@ -1,0 +1,96 @@
+@import '../utils';
+@import '../../node_modules/LykkeFramework/assets/scss/partials/modal';
+@import '../../node_modules/LykkeFramework/assets/scss/partials/btn';
+
+.modal {
+  display: block !important;
+  visibility: hidden;
+  opacity: 0;
+
+  @include transition(all 0.4s ease);
+
+  &.fade.in {
+    visibility: visible;
+    opacity: 1;
+
+    .modal-content {
+      @include transform(scale(1) translate(0, 0));
+    }
+  }
+
+  &__dialog {
+    display: table;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  &__inner {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  &__content {
+    pointer-events: all;
+    width: 570px;
+    max-width: 100%;
+    background: $white;
+    border-radius: 8px;
+    margin: 30px auto 120px;
+    position: relative;
+
+    @include transition(transform 0.2s ease-in-out);
+  }
+
+  &__body {
+    @include rem(padding, 41px 40px 35px);
+  }
+
+  &__title {
+    color: $text;
+    font-weight: $fw-semi;
+    line-height: 1.43;
+    margin-bottom: 8px;
+
+    @include rem(font-size, 28px);
+  }
+
+  &__description {
+    color: $secondary;
+    line-height: 1.67;
+    margin-bottom: 29px;
+
+    @include rem(font-size, 18px);
+  }
+
+  &__actions {
+    .btn {
+      margin-top: 11px;
+
+      &--flat {
+        line-height: normal;
+      }
+
+      + .btn {
+        margin-top: 11px;
+      }
+    }
+  }
+
+  @media (max-width: $screen-mobile) {
+    display: block;
+    padding: 0 !important;
+    background: $white;
+
+    .modal__inner,
+    .modal__dialog {
+      display: block;
+    }
+
+    .modal__content {
+      margin: 0;
+      box-shadow: none;
+      border-radius: 0;
+    }
+  }
+}

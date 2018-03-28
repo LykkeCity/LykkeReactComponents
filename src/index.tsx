@@ -1,5 +1,6 @@
 import ClickOutside from './ClickOutside';
 
+import Dialog from './Dialog/Dialog';
 import Dropdown from './Dropdown/Dropdown';
 import {DropdownPosition} from './Dropdown/Dropdown';
 import DropdownContainer from './Dropdown/DropdownContainer';
@@ -12,6 +13,7 @@ import Select from './Select/Select';
 
 export {
   ClickOutside,
+  Dialog,
   Dropdown,
   DropdownPosition,
   DropdownContainer,
