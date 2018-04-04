@@ -17,7 +17,8 @@ export default {
   },
   plugins: [
     copy({
-      "node_modules/LykkeFramework/assets/fonts": "dist/fonts",
+      'node_modules/LykkeFramework/assets/fonts': 'dist/fonts',
+      'node_modules/LykkeFramework/assets/img': 'dist/img'
     }),
     css({dest: 'dist/bundle/style.css'}),
     typescript({

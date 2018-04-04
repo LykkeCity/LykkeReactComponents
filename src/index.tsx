@@ -7,6 +7,7 @@ import DropdownContainer from './Dropdown/DropdownContainer';
 import DropdownControl from './Dropdown/DropdownControl';
 import DropdownList from './Dropdown/DropdownList';
 import DropdownListItem from './Dropdown/DropdownListItem';
+import Error404 from './Error404';
 import OptGroup from './Select/OptGroup';
 import Option from './Select/Option';
 import Select from './Select/Select';
@@ -20,6 +21,7 @@ export {
   DropdownControl,
   DropdownList,
   DropdownListItem,
+  Error404,
   OptGroup,
   Option,
   Select

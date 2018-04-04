@@ -1,0 +1,61 @@
+@import '../utils';
+@import '../../node_modules/LykkeFramework/assets/scss/partials/status_icon';
+
+.error-404 {
+  padding: 3vh 0;
+
+  a {
+    text-decoration: none;
+  }
+
+  &__status-code {
+    color: $text;
+    font-weight: $fw-thin;
+    text-align: center;
+
+    @include rem(font-size, 96px);
+
+    .status_icon {
+      display: inline-block;
+      margin: 0 0.625rem;
+      position: relative;
+      vertical-align: middle;
+
+      @include rem(margin, 0 10px);
+      @include rem(top, -10px);
+    }
+  }
+
+  &__status-text {
+    color: #000;
+    font: {
+      family: Akrobat, 'Segoe UI', Roboto, 'Droid Sans', 'Helvetica Neue', Arial,
+        sans-serif;
+      weight: $fw-semi;
+    }
+    line-height: 1.25;
+    margin-bottom: 2.5rem;
+    text-align: center;
+
+    @include rem(font-size, 40px);
+  }
+
+  &__description {
+    letter-spacing: normal;
+    line-height: 1.64;
+
+    @include rem(font-size, 22px);
+
+    a {
+      color: #1694fb;
+    }
+  }
+
+  &__action {
+    margin-top: 4.375rem;
+
+    .btn {
+      @include rem(min-width, 150px);
+    }
+  }
+}
