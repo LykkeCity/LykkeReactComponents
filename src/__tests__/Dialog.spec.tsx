@@ -48,6 +48,8 @@ test('Dialog should handle confirmButton.text property', () => {
   expect(dialog.find('.modal__actions .btn--flat').text()).toBe('Confirm');
   dialog = mount(<Dialog confirmButton={{text: 'foo'}} />);
   expect(dialog.find('.modal__actions .btn--flat').text()).toBe('foo');
+  dialog = mount(<Dialog confirmButton={{text: ''}} />);
+  expect(dialog.find('.modal__actions .btn--flat').length).toBe(0);
 });
 
 test('Dialog should handle cancelButton.text property', () => {
@@ -55,6 +57,8 @@ test('Dialog should handle cancelButton.text property', () => {
   expect(dialog.find('.modal__actions .btn--primary').text()).toBe('Cancel');
   dialog = mount(<Dialog cancelButton={{text: 'foo'}} />);
   expect(dialog.find('.modal__actions .btn--primary').text()).toBe('foo');
+  dialog = mount(<Dialog cancelButton={{text: ''}} />);
+  expect(dialog.find('.modal__actions .btn--primary').length).toBe(0);
 });
 
 test('Dialog should call onCancel and onConfirm handlers', () => {

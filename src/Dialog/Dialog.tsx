@@ -10,6 +10,7 @@ export interface DialogProps {
   onCancel?: () => void;
   onConfirm?: () => void;
   visible?: boolean;
+  closeable?: boolean;
   confirmButton?: {text: string};
   cancelButton?: {text: string};
   title?: string | JSX.Element;
@@ -36,8 +37,10 @@ export class Dialog extends React.Component<DialogProps, DialogState> {
   }
 
   handleClickOutside = () => {
-    if (this.state.visible && this.props.onCancel) {
-      this.props.onCancel();
+    const {closeable = true, onCancel = () => ({})} = this.props;
+
+    if (this.state.visible && closeable) {
+      onCancel();
     }
   };
 
@@ -82,19 +85,23 @@ export class Dialog extends React.Component<DialogProps, DialogState> {
                   <div className="modal__title">{title}</div>
                   <div className="modal__description">{description}</div>
                   <div className="modal__actions">
-                    <button
-                      type="button"
-                      className="btn btn--primary btn-block"
-                      onClick={this.handleCancel}
-                    >
-                      {cancelButton.text}
-                    </button>
-                    <button
-                      className="btn btn--flat btn-block"
-                      onClick={this.handleConfirm}
-                    >
-                      {confirmButton.text}
-                    </button>
+                    {cancelButton.text && (
+                      <button
+                        type="button"
+                        className="btn btn--primary btn-block"
+                        onClick={this.handleCancel}
+                      >
+                        {cancelButton.text}
+                      </button>
+                    )}
+                    {confirmButton.text && (
+                      <button
+                        className="btn btn--flat btn-block"
+                        onClick={this.handleConfirm}
+                      >
+                        {confirmButton.text}
+                      </button>
+                    )}
                   </div>
                 </div>
               </ClickOutside>

@@ -16,6 +16,7 @@ storiesOf('Dialog', module).add(
       onCancel?: () => void;
       onConfirm?: () => void;
       visible?: boolean;
+      closeable?: boolean;
       confirmButton?: {text: string};
       cancelButton?: {text: string};
       title?: string | JSX.Element;
@@ -25,10 +26,10 @@ storiesOf('Dialog', module).add(
     `)(() => (
     <div
       style={{
-        width: '100%',
-        height: '100%',
         backgroundColor: '#cfd2d7',
-        position: 'fixed'
+        height: '100%',
+        position: 'fixed',
+        width: '100%'
       }}
     >
       <Dialog
