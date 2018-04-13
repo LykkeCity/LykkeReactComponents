@@ -8,6 +8,7 @@ import DropdownControl from './Dropdown/DropdownControl';
 import DropdownList from './Dropdown/DropdownList';
 import DropdownListItem from './Dropdown/DropdownListItem';
 import Error404 from './Error404';
+import Icon from './Icon';
 import OptGroup from './Select/OptGroup';
 import Option from './Select/Option';
 import Select from './Select/Select';
@@ -22,6 +23,7 @@ export {
   DropdownList,
   DropdownListItem,
   Error404,
+  Icon,
   OptGroup,
   Option,
   Select

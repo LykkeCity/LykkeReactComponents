@@ -7,6 +7,7 @@ export interface DialogProps {
     onCancel?: () => void;
     onConfirm?: () => void;
     visible?: boolean;
+    closeable?: boolean;
     confirmButton?: {
         text: string;
     };
