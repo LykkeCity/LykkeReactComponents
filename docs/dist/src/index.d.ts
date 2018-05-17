@@ -11,4 +11,5 @@ import Icon from './Icon';
 import OptGroup from './Select/OptGroup';
 import Option from './Select/Option';
 import Select from './Select/Select';
-export { ClickOutside, Dialog, Dropdown, DropdownPosition, DropdownContainer, DropdownControl, DropdownList, DropdownListItem, Error404, Icon, OptGroup, Option, Select };
+import Table from './Table';
+export { ClickOutside, Dialog, Dropdown, DropdownPosition, DropdownContainer, DropdownControl, DropdownList, DropdownListItem, Error404, Icon, OptGroup, Option, Select, Table };

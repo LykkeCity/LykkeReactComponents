@@ -12,6 +12,7 @@ import Icon from './Icon';
 import OptGroup from './Select/OptGroup';
 import Option from './Select/Option';
 import Select from './Select/Select';
+import Table from './Table';
 
 export {
   ClickOutside,
@@ -26,5 +27,6 @@ export {
   Icon,
   OptGroup,
   Option,
-  Select
+  Select,
+  Table
 };
