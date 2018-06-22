@@ -1,6 +1,6 @@
 ## Lykke React Components
 
-Docs: [Storybook](https://andreyzhylin.github.io/LykkeReactComponents)
+Docs: [Storybook](https://lykkecity.github.io/LykkeReactComponents)
 
 This project is a library of React Components for Lykke projects.
 
