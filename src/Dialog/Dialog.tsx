@@ -15,6 +15,11 @@ export interface DialogProps {
   cancelButton?: {text: string};
   title?: string | JSX.Element;
   description?: string | JSX.Element;
+  actions?: Array<{
+    text: string;
+    cssClass?: string;
+    onClick: () => void;
+  }>;
 }
 
 export interface DialogState {
@@ -67,6 +72,7 @@ export class Dialog extends React.Component<DialogProps, DialogState> {
       cancelButton = {text: 'Cancel'},
       title,
       description,
+      actions,
       ...props
     } = this.props;
 
@@ -85,22 +91,37 @@ export class Dialog extends React.Component<DialogProps, DialogState> {
                   <div className="modal__title">{title}</div>
                   <div className="modal__description">{description}</div>
                   <div className="modal__actions">
-                    {cancelButton.text && (
-                      <button
-                        type="button"
-                        className="btn btn--primary btn-block"
-                        onClick={this.handleCancel}
-                      >
-                        {cancelButton.text}
-                      </button>
-                    )}
-                    {confirmButton.text && (
-                      <button
-                        className="btn btn--flat btn-block"
-                        onClick={this.handleConfirm}
-                      >
-                        {confirmButton.text}
-                      </button>
+                    {actions ? (
+                      actions.map(action => (
+                        <button
+                          key={action.text}
+                          type="button"
+                          className={classnames('btn', action.cssClass)}
+                          onClick={action.onClick}
+                        >
+                          {action.text}
+                        </button>
+                      ))
+                    ) : (
+                      <div>
+                        {cancelButton.text && (
+                          <button
+                            type="button"
+                            className="btn btn--primary btn-block"
+                            onClick={this.handleCancel}
+                          >
+                            {cancelButton.text}
+                          </button>
+                        )}
+                        {confirmButton.text && (
+                          <button
+                            className="btn btn--flat btn-block"
+                            onClick={this.handleConfirm}
+                          >
+                            {confirmButton.text}
+                          </button>
+                        )}
+                      </div>
                     )}
                   </div>
                 </div>

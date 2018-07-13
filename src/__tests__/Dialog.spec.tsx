@@ -74,3 +74,28 @@ test('Dialog should call onCancel and onConfirm handlers', () => {
   dialog.find('.modal__actions .btn--primary').simulate('click');
   expect(handleCancel).toBeCalled();
 });
+
+test('Dialog should handle actions property', () => {
+  const handleClick = jest.fn();
+  const handleClick2 = jest.fn();
+  let dialog = mount(<Dialog />);
+  expect(dialog.find('.modal__actions .btn--primary').text()).toBe('Cancel');
+  dialog = mount(<Dialog actions={[{text: 'foo', onClick: handleClick}]} />);
+  expect(dialog.find('.modal__actions .btn--primary').length).toBe(0);
+  expect(dialog.find('.modal__actions .btn').length).toBe(1);
+  dialog.find('.modal__actions .btn').simulate('click');
+  expect(handleClick).toBeCalled();
+  dialog = mount(
+    <Dialog
+      actions={[
+        {text: 'foo', onClick: handleClick},
+        {text: 'bar', cssClass: 'bar', onClick: handleClick2}
+      ]}
+    />
+  );
+  expect(dialog.find('.modal__actions .btn').length).toBe(2);
+  expect(dialog.find('.modal__actions .btn.bar').length).toBe(1);
+  expect(dialog.find('.modal__actions .btn.bar').text()).toBe('bar');
+  dialog.find('.modal__actions .btn.bar').simulate('click');
+  expect(handleClick2).toBeCalled();
+});

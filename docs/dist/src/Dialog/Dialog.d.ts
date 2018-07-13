@@ -16,6 +16,11 @@ export interface DialogProps {
     };
     title?: string | JSX.Element;
     description?: string | JSX.Element;
+    actions?: Array<{
+        text: string;
+        cssClass?: string;
+        onClick: () => void;
+    }>;
 }
 export interface DialogState {
     visible?: boolean;

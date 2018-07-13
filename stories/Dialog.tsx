@@ -21,6 +21,11 @@ storiesOf('Dialog', module).add(
       cancelButton?: {text: string};
       title?: string | JSX.Element;
       description?: string | JSX.Element;
+      actions?: Array<{
+        text: string;
+        cssClass?: string;
+        onClick: () => void;
+      }>;
     }
     ~~~
     `)(() => (
@@ -38,6 +43,37 @@ storiesOf('Dialog', module).add(
         description="Description"
         onCancel={action('cancel')}
         onConfirm={action('confirm')}
+      />
+    </div>
+  ))
+);
+
+storiesOf('Dialog', module).add(
+  'actions',
+  withInfo('')(() => (
+    <div
+      style={{
+        backgroundColor: '#cfd2d7',
+        height: '100%',
+        position: 'fixed',
+        width: '100%'
+      }}
+    >
+      <Dialog
+        actions={[
+          {
+            onClick: action('action1'),
+            text: 'Action 1'
+          },
+          {
+            cssClass: 'btn-block',
+            onClick: action('action2'),
+            text: 'Action 2'
+          }
+        ]}
+        visible
+        title="Title"
+        description="Description"
       />
     </div>
   ))
