@@ -1,6 +1,5 @@
 import classnames from 'classnames';
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './style.css';
 
 export interface CheckboxProps {
@@ -34,7 +33,7 @@ export class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
     const {className, label, ...props} = this.props;
     const {checked} = this.state;
 
-    return ReactDOM.createPortal(
+    return (
       <label className={classnames('checkbox-container', className)} {...props}>
         <input
           type="checkbox"
@@ -43,9 +42,8 @@ export class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
           onChange={this.handleToggle}
         />
         <span>{label}</span>
-      </label>,
-      document.body
-    ) as React.ReactPortal;
+      </label>
+    );
   }
 }
 
