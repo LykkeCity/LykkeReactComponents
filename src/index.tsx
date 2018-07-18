@@ -1,5 +1,6 @@
 import ClickOutside from './ClickOutside';
 
+import Checkbox from './Checkbox/Checkbox';
 import Dialog from './Dialog/Dialog';
 import Dropdown from './Dropdown/Dropdown';
 import {DropdownPosition} from './Dropdown/Dropdown';
@@ -16,6 +17,7 @@ import Table from './Table';
 
 export {
   ClickOutside,
+  Checkbox,
   Dialog,
   Dropdown,
   DropdownPosition,

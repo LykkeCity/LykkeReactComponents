@@ -1,4 +1,5 @@
 import ClickOutside from './ClickOutside';
+import Checkbox from './Checkbox/Checkbox';
 import Dialog from './Dialog/Dialog';
 import Dropdown from './Dropdown/Dropdown';
 import { DropdownPosition } from './Dropdown/Dropdown';
@@ -12,4 +13,4 @@ import OptGroup from './Select/OptGroup';
 import Option from './Select/Option';
 import Select from './Select/Select';
 import Table from './Table';
-export { ClickOutside, Dialog, Dropdown, DropdownPosition, DropdownContainer, DropdownControl, DropdownList, DropdownListItem, Error404, Icon, OptGroup, Option, Select, Table };
+export { ClickOutside, Checkbox, Dialog, Dropdown, DropdownPosition, DropdownContainer, DropdownControl, DropdownList, DropdownListItem, Error404, Icon, OptGroup, Option, Select, Table };

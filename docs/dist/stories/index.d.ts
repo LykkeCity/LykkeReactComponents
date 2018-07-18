@@ -1,4 +1,5 @@
 import './ClickOutside';
+import './Checkbox';
 import './Dialog';
 import './Dropdown';
 import './Error404';

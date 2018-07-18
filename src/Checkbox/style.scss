@@ -1,0 +1,48 @@
+.checkbox-container {
+  position: relative;
+
+  .checkbox {
+    display: none;
+  }
+
+  .checkbox + span {
+    position: relative;
+    padding-left: 48px;
+    user-select: none;
+
+    &:before {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '';
+      width: 32px;
+      height: 18px;
+      border-radius: 12px;
+      background-color: #333333;
+    }
+
+    &:after {
+      display: block;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      content: '';
+      width: 14px;
+      height: 14px;
+      border-radius: 100%;
+      background-color: #f5f6f7;
+    }
+  }
+
+  .checkbox:checked + span {
+    &:before {
+      background-color: #0388ef;
+    }
+
+    &:after {
+      left: 16px;
+      background-color: #333333;
+    }
+  }
+}
