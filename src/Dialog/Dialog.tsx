@@ -73,6 +73,7 @@ export class Dialog extends React.Component<DialogProps, DialogState> {
       title,
       description,
       actions,
+      closeable,
       ...props
     } = this.props;
 
