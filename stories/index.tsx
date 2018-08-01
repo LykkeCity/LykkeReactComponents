@@ -1,3 +1,4 @@
+import './Button';
 import './Checkbox';
 import './ClickOutside';
 import './Dialog';
