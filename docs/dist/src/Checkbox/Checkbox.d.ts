@@ -2,18 +2,17 @@
 import React from 'react';
 import './style.css';
 export interface CheckboxProps {
-    onToggle: (checked: boolean) => void;
+    checked: boolean;
+    onToggle?: () => void;
     className?: string;
-    defaultState?: boolean;
     label?: string | JSX.Element;
 }
 export interface CheckboxState {
-    checked?: boolean;
+    checked: boolean;
 }
 export declare class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
     constructor(props: CheckboxProps);
-    componentWillReceiveProps(nextProps: CheckboxProps): void;
-    handleToggle: (event: React.MouseEvent<HTMLElement>) => void;
-    render(): React.ReactPortal;
+    handleToggle: () => void;
+    render(): JSX.Element;
 }
 export default Checkbox;
