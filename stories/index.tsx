@@ -4,6 +4,8 @@ import './ClickOutside';
 import './Dialog';
 import './Dropdown';
 import './Error404';
+import './Footer';
 import './Icon';
 import './Select';
+import './Social';
 import './Table';
