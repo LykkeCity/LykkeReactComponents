@@ -1,5 +1,6 @@
 import ClickOutside from './ClickOutside';
 
+import AppError from './AppError';
 import Button from './Button/Button';
 import Checkbox from './Checkbox/Checkbox';
 import Dialog from './Dialog/Dialog';
@@ -17,6 +18,7 @@ import Select from './Select/Select';
 import Table from './Table';
 
 export {
+  AppError,
   Button,
   ClickOutside,
   Checkbox,
