@@ -1,3 +1,4 @@
+import './AppError';
 import './Button';
 import './Checkbox';
 import './ClickOutside';
