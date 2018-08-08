@@ -9,13 +9,14 @@ storiesOf('AppError', module).add(
     <h3>Props:</h3>
 
     ~~~javascript
-    interface Error404Props {
-      buttonText?: string;
-      buttonUrl?: string;
+    interface AppErrorProps {
+      reloadButtonText?: string;
+      reloadButtonUrl?: string;
       className?: string;
       description?: string;
-      email?: string;
       statusText?: string;
+      auxiliaryText?: string;
+      email?: string;
       tag?: string;
     }
     ~~~

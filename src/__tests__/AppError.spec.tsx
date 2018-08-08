@@ -20,13 +20,13 @@ test('Application Error should set className', () => {
   expect(appError.find('.foo').hostNodes()).toHaveLength(1);
 });
 
-test('Application Error should set button text', () => {
-  const appError = mount(<AppError buttonText="button" />);
+test('Application Error should set reload button text', () => {
+  const appError = mount(<AppError reloadButtonText="button" />);
   expect(appError.find('.btn').text()).toBe('button');
 });
 
-test('Application Error should set button url', () => {
-  const appError = mount(<AppError buttonUrl="/url" />);
+test('Application Error should set reload button url', () => {
+  const appError = mount(<AppError reloadButtonUrl="/url" />);
   expect(appError.find({href: '/url'})).toHaveLength(1);
 });
 

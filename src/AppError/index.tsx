@@ -4,8 +4,8 @@ import Icon from '../Icon';
 import './style.css';
 
 export interface AppErrorProps {
-  buttonText?: string;
-  buttonUrl?: string;
+  reloadButtonText?: string;
+  reloadButtonUrl?: string;
   className?: string;
   description?: string;
   statusText?: string;
@@ -15,8 +15,8 @@ export interface AppErrorProps {
 }
 
 export const AppError: React.SFC<AppErrorProps> = ({
-  buttonText = 'Reload',
-  buttonUrl = '/',
+  reloadButtonText = 'Reload',
+  reloadButtonUrl = '/',
   className,
   description = 'There has been a small, temporary error with our system. Please choose one of the option below to reload the page.',
   statusText = 'Unexpected Error',
@@ -35,8 +35,8 @@ export const AppError: React.SFC<AppErrorProps> = ({
       {statusText && <h2 className="app-error__status-text">{statusText}</h2>}
       {description && <p className="app-error__description">{description}</p>}
       <div className="app-error__action text-center">
-        <a href={buttonUrl} className="btn btn-sm">
-          {buttonText}
+        <a href={reloadButtonUrl} className="btn btn-sm">
+          {reloadButtonText}
         </a>
       </div>
       {auxiliaryText && (
