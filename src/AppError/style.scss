@@ -25,14 +25,13 @@
 
       .status_icon {
         display: inline-block;
-        margin: 0 0.625rem;
+        margin: 0;
         position: relative;
         vertical-align: middle;
         color: $white;
         transform: scale(2);
 
-        @include rem(margin, 0 10px);
-        @include rem(top, -14px);
+        @include rem(top, -16px);
       }
     }
   }
@@ -52,6 +51,7 @@
   }
 
   &__description {
+    color: $text;
     letter-spacing: normal;
     line-height: 1.64;
 
@@ -73,6 +73,10 @@
 
   &__auxiliary-text {
     margin-top: 8rem;
+
+    span {
+      color: $text;
+    }
 
     a {
       color: $blue;
