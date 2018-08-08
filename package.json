@@ -12,12 +12,13 @@
   },
   "scripts": {
     "precommit": "lint-staged",
-    "test": "jest",
+    "test": "jest --coverage",
     "build-css": "node-sass-chokidar src/ -o src/ && node-sass-chokidar src/ -o dist/",
     "prebuild": "rimraf dist & yarn build-css",
     "build": "yarn test && tsc -p . && rollup -c",
     "storybook": "yarn build && start-storybook -p 6006",
-    "build-storybook": "build-storybook -o docs"
+    "build-storybook": "build-storybook -o docs",
+    "lint": "tslint src/**/*.{ts,tsx}"
   },
   "main": "./dist/bundle/lykke-react-components.js",
   "module": "./dist/index.js",
@@ -90,6 +91,14 @@
     "stories/**/*.{ts,tsx}": "tslint --fix"
   },
   "jest": {
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
     },

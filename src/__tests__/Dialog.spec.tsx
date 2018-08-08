@@ -43,6 +43,24 @@ test('Dialog should handle description property', () => {
   expect(dialog.find('.modal__description').text()).toBe('foo');
 });
 
+test('Dialog should handle click outside handle', () => {
+  const onCancel = jest.fn();
+  const dialog = mount(<Dialog onCancel={onCancel} />);
+  const clickOutside = dialog.find('ClickOutside');
+  dialog.setState({visible: true});
+  (clickOutside.props() as any).onClickOutside();
+  expect(onCancel).toHaveBeenCalled();
+});
+
+test('Dialog should not handle click outside handle if dialog is not closeable', () => {
+  const onCancel = jest.fn();
+  const dialog = mount(<Dialog onCancel={onCancel} />);
+  const clickOutside = dialog.find('ClickOutside');
+  dialog.setProps({closeable: false});
+  (clickOutside.props() as any).onClickOutside();
+  expect(onCancel).not.toHaveBeenCalled();
+});
+
 test('Dialog should handle confirmButton.text property', () => {
   let dialog = mount(<Dialog />);
   expect(dialog.find('.modal__actions .btn--flat').text()).toBe('Confirm');

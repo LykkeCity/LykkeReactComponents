@@ -24,6 +24,7 @@ export class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
 
   handleToggle = () => {
     this.setState({checked: !this.state.checked});
+    /* istanbul ignore else */
     if (this.props.onToggle) {
       this.props.onToggle();
     }
