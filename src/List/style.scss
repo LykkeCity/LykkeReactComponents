@@ -1,0 +1,11 @@
+@import '../utils';
+
+.list {
+  line-height: 2.22;
+  color: #333333;
+  @include rem(font-size, 18px);
+
+  &__item {
+    @include rem(padding-left, 12px);
+  }
+}

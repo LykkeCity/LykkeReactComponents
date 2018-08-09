@@ -1,0 +1,54 @@
+@import '../utils';
+
+.switcher-container {
+  position: relative;
+  font-weight: normal;
+  line-height: 1.25;
+  color: #333333;
+  @include rem(font-size, 16px);
+
+  .switcher {
+    display: none;
+  }
+
+  .switcher + span {
+    position: relative;
+    padding-left: 48px;
+    user-select: none;
+    display: inline-block;
+    height: 24px;
+    padding-top: 3px;
+
+    &:before {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '';
+      width: 36px;
+      height: 24px;
+      border-radius: 12px;
+      border: solid 1px #cfd2d7;
+    }
+
+    &:after {
+      display: block;
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      content: '';
+      width: 14px;
+      height: 14px;
+      border-radius: 100%;
+      background-color: #8c94a0;
+      transition: 0.3s;
+    }
+  }
+
+  .switcher:checked + span {
+    &:after {
+      left: 16px;
+      background-color: #0388ef;
+    }
+  }
+}

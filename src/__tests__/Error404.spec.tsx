@@ -1,9 +1,6 @@
-import Enzyme, {mount, shallow} from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import {mount, shallow} from 'enzyme';
 import React from 'react';
 import {Error404} from '../Error404';
-
-Enzyme.configure({adapter: new Adapter()});
 
 test('Error 404 should be div by default', () => {
   const error404 = shallow(<Error404 />);

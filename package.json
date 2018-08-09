@@ -1,6 +1,6 @@
 {
   "name": "@lykkex/react-components",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "React Components for Lykke projects",
   "keywords": [
     "Lykke"
@@ -18,7 +18,7 @@
     "build": "yarn test && tsc -p . && rollup -c",
     "storybook": "yarn build && start-storybook -p 6006",
     "build-storybook": "build-storybook -o docs",
-    "lint": "tslint src/**/*.{ts,tsx}"
+    "lint": "tslint src/**/*.{ts,tsx} stories/**/*.{ts,tsx}"
   },
   "main": "./dist/bundle/lykke-react-components.js",
   "module": "./dist/index.js",
@@ -115,7 +115,8 @@
     ],
     "moduleNameMapper": {
       "\\.(css|scss)$": "identity-obj-proxy"
-    }
+    },
+    "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.ts"
   },
   "dependencies": {}
 }

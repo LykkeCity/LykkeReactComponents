@@ -1,0 +1,68 @@
+@import '../utils';
+
+.message {
+  position: relative;
+  border-radius: 8px;
+  background-color: #ffffff;
+  border: solid 1px #ebedef;
+  @include rem(padding, 10px 25px);
+
+  &:before {
+    display: block;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    height: calc(100% - 20px);
+    width: 2px;
+    border-radius: 100px;
+  }
+
+  &.note {
+    &:before {
+      background: #0388ef;
+    }
+  }
+
+  &.identified {
+    &:before {
+      background: #ff3e2e;
+    }
+  }
+
+  &.update {
+    &:before {
+      background: #ffae2c;
+    }
+  }
+
+  &.information {
+    &:before {
+      background: #0388ef;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    line-height: 1.67;
+    text-align: left;
+    color: #111111;
+    @include rem(font-size, 18px);
+  }
+
+  &__subtitle {
+    opacity: 0.6;
+    line-height: 1.5;
+    text-align: left;
+    color: #3f4d60;
+    @include rem(font-size, 16px);
+  }
+
+  &__text {
+    font-size: 18px;
+    line-height: 1.67;
+    text-align: left;
+    color: #333333;
+    @include rem(font-size, 18px);
+  }
+}

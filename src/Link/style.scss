@@ -1,0 +1,32 @@
+@import '../utils';
+
+.link {
+  text-decoration: none;
+  font-weight: 600;
+  line-height: 1.56;
+  @include rem(font-size, 16px);
+
+  &.blue {
+    color: #0388ef;
+
+    &:hover {
+      color: #0274de;
+    }
+  }
+
+  &.gray {
+    color: #657180;
+
+    &:hover {
+      color: #333333;
+    }
+  }
+
+  &.black {
+    color: #111111;
+
+    &:hover {
+      color: #657180;
+    }
+  }
+}

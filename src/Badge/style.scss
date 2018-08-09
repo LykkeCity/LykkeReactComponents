@@ -1,0 +1,42 @@
+@import '../utils';
+
+.badge {
+  font-weight: 600;
+  letter-spacing: 0.9px;
+  color: #ffffff;
+  border-radius: 4px;
+  text-transform: uppercase;
+  width: fit-content;
+  @include rem(font-size, 13px);
+  @include rem(padding, 4px 10px);
+
+  &.green {
+    background-color: #13b72a;
+  }
+
+  &.blue {
+    background-color: #0388ef;
+  }
+
+  &.red {
+    background-color: #ff3e2e;
+  }
+
+  &.orange {
+    background-color: #ffae2c;
+  }
+
+  &.violet {
+    background-color: #ab00ff;
+  }
+
+  &.gray {
+    background-color: #cfd2d7;
+  }
+
+  &.secondary {
+    border-radius: 12px;
+    background-color: #ebedef;
+    color: #8c94a0;
+  }
+}

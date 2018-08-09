@@ -1,0 +1,11 @@
+@import '../utils';
+
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  top: 48px;
+
+  i {
+    @include rem(font-size, 32px);
+  }
+}
