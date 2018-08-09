@@ -101,6 +101,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
   };
 
   focusPrev = () => {
+    /* istanbul ignore else */
     if (this.focusedOption) {
       const focusedIndex = this.visibleOptions.findIndex(
         o => o === this.focusedOption
@@ -114,7 +115,6 @@ export class Select extends React.Component<SelectProps, SelectState> {
         focusedOptionValue: this.getOptionValue(prevOption)
       });
     } else if (this.visibleOptions.length > 0) {
-      /* istanbul ignore next */
       this.setState({
         focusedOptionValue: this.getOptionValue(this.visibleOptions[0])
       });
