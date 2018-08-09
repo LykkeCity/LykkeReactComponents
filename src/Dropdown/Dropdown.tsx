@@ -67,6 +67,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
           isOpen: false
         },
         () => {
+          /* istanbul ignore else */
           if (wasOpen && this.props.onClose) {
             this.props.onClose();
           }
@@ -84,6 +85,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       isOpen,
       onOpen,
       onClose,
+      /* istanbul ignore next */
       position = 'bottom',
       tag: Tag = 'div',
       trigger = 'hover',

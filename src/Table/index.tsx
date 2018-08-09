@@ -26,8 +26,8 @@ export const Table: React.SFC<TableProps> = ({
         'table',
         {
           'table--simple': simple,
-          'table-striped': striped,
-          'table--transparent': transparent
+          'table--transparent': transparent,
+          'table-striped': striped
         },
         className
       )}

@@ -49,6 +49,30 @@ const options = [
   }
 ];
 
+test('Select should set empty array as options by default', () => {
+  const select = mount(
+    <Select labelKey="label" valueKey="value" className="foo" />
+  );
+  const instance = select.instance() as any;
+  expect(instance.options).toBeInstanceOf(Array);
+  expect(instance.options).toHaveLength(0);
+});
+
+test('Select should update state on handleSelectClose', () => {
+  const select = mount(
+    <Select
+      options={options}
+      labelKey="label"
+      valueKey="value"
+      className="foo"
+    />
+  );
+  const instance = select.instance() as any;
+  instance.setState = jest.fn();
+  instance.handleSelectClose();
+  expect(instance.setState).toBeCalledWith({isOpen: false});
+});
+
 test('Select should set className', () => {
   const select = mount(
     <Select
@@ -198,6 +222,58 @@ test('Select should be controlled by keyboard', () => {
   expect(selectInstance.state.isOpen).toBeFalsy();
 });
 
+test('Select should not set default state on key down for closed select without options', () => {
+  const select = mount(
+    <Select
+      options={[]}
+      labelKey="label"
+      valueKey="value"
+      value={options[0].value}
+    />
+  );
+  const selectInstance = select.instance() as Select;
+  selectInstance.setState = jest.fn();
+
+  select.find('input').simulate('keydown', {key: 'ArrowDown'});
+  expect(selectInstance.setState).not.toBeCalled();
+});
+
+test('Select should set default state on key down in closed select', () => {
+  const select = mount(
+    <Select
+      options={options}
+      labelKey="label"
+      valueKey="value"
+      value={options[0].value}
+    />
+  );
+  const selectInstance = select.instance() as Select;
+  selectInstance.setState = jest.fn();
+
+  select.find('input').simulate('keydown', {key: 'ArrowDown'});
+  expect(selectInstance.setState).toBeCalledWith({
+    focusedOptionValue: options[0].value
+  });
+});
+
+test('Select should set default state on key up in closed select', () => {
+  const select = mount(
+    <Select
+      options={options}
+      labelKey="label"
+      valueKey="value"
+      value={options[0].value}
+    />
+  );
+  const selectInstance = select.instance() as Select;
+  selectInstance.setState = jest.fn();
+
+  select.find('input').simulate('keydown', {key: 'ArrowUp'});
+  expect(selectInstance.setState).toBeCalledWith({
+    focusedOptionValue: options[0].value
+  });
+});
+
 test('Select should filter options', () => {
   const select = mount(
     <Select
@@ -305,4 +381,34 @@ test('Select should correctly render option', () => {
       .first()
       .text()
   ).toBe(`foo${options[0].value}bar`);
+});
+
+test('Select should call callback on option mouse enter', () => {
+  const select = mount(
+    <Select options={options} labelKey="label" valueKey="value" />
+  );
+  const selectInstance = select.instance() as Select;
+  selectInstance.handleSelectOpen();
+
+  const firstOption = select.find('.dropdown-list__item').first();
+  const handleOptionMouseEnter = jest.fn();
+  (select.instance() as any).handleOptionMouseEnter = handleOptionMouseEnter;
+  (firstOption.props() as any).onMouseEnter();
+
+  expect(handleOptionMouseEnter).toBeCalled();
+});
+
+test('Select should call callback on option click', () => {
+  const select = mount(
+    <Select options={options} labelKey="label" valueKey="value" />
+  );
+  const selectInstance = select.instance() as Select;
+  selectInstance.handleSelectOpen();
+
+  const firstOption = select.find('.dropdown-list__item').first();
+  const handleOptionClick = jest.fn();
+  (select.instance() as any).handleOptionClick = handleOptionClick;
+  (firstOption.props() as any).onClick();
+
+  expect(handleOptionClick).toBeCalled();
 });

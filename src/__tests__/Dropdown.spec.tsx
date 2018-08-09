@@ -5,6 +5,34 @@ import {Dropdown} from '../Dropdown';
 
 Enzyme.configure({adapter: new Adapter()});
 
+test('Dropdown should not update state on click if trigger is not "click"', () => {
+  const dropdown = mount(<Dropdown>Foo</Dropdown>);
+  const instance = dropdown.instance() as any;
+  instance.setState = jest.fn();
+  (dropdown.instance() as any).handleClickOutside();
+  expect(instance.setState).not.toBeCalled();
+});
+
+test('Dropdown should update state on click if trigger is "click"', () => {
+  const dropdown = mount(<Dropdown trigger="click">Foo</Dropdown>);
+  const instance = dropdown.instance() as any;
+  instance.setState = jest.fn();
+  (dropdown.instance() as any).handleClickOutside();
+  expect(instance.setState).toBeCalled();
+});
+
+test('Dropdown should call onClose callback on click if trigger is "click" and dropdown is open', () => {
+  const onClose = jest.fn();
+  const dropdown = mount(
+    <Dropdown trigger="click" onClose={onClose}>
+      Foo
+    </Dropdown>
+  );
+  dropdown.setState({isOpen: true});
+  (dropdown.instance() as any).handleClickOutside();
+  expect(onClose).toBeCalled();
+});
+
 test('Dropdown should render children', () => {
   const dropdown = mount(<Dropdown>Foo</Dropdown>);
   expect(dropdown.text()).toBe('Foo');

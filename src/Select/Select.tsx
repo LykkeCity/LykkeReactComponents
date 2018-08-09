@@ -74,6 +74,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
   }
 
   componentWillReceiveProps(nextProps: SelectProps) {
+    /* istanbul ignore else */
     if (nextProps.value !== this.state.value) {
       this.setState({value: nextProps.value});
     }
@@ -113,6 +114,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
         focusedOptionValue: this.getOptionValue(prevOption)
       });
     } else if (this.visibleOptions.length > 0) {
+      /* istanbul ignore next */
       this.setState({
         focusedOptionValue: this.getOptionValue(this.visibleOptions[0])
       });
@@ -137,6 +139,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
         e.preventDefault();
         e.stopPropagation();
 
+        /* istanbul ignore else */
         if (this.focusedOption) {
           this.handleOptionClick(this.focusedOption);
         }
@@ -148,6 +151,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
       }
     };
 
+    /* istanbul ignore else */
     if (!!handlers[e.key]) {
       handlers[e.key]();
     }

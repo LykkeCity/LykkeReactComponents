@@ -42,6 +42,7 @@ export class Dialog extends React.Component<DialogProps, DialogState> {
   }
 
   handleClickOutside = () => {
+    /* istanbul ignore next */
     const {closeable = true, onCancel = () => ({})} = this.props;
 
     if (this.state.visible && closeable) {
@@ -50,12 +51,14 @@ export class Dialog extends React.Component<DialogProps, DialogState> {
   };
 
   handleCancel = () => {
+    /* istanbul ignore else */
     if (this.props.onCancel) {
       this.props.onCancel();
     }
   };
 
   handleConfirm = () => {
+    /* istanbul ignore else */
     if (this.props.onConfirm) {
       this.props.onConfirm();
     }
