@@ -1,6 +1,7 @@
 import ClickOutside from './ClickOutside';
 
-import AppError from './AppError';
+import AppError from './AppError/AppError';
+import ErrorIcon from './AppError/ErrorIcon';
 import Button from './Button/Button';
 import Checkbox from './Checkbox/Checkbox';
 import Dialog from './Dialog/Dialog';
@@ -21,6 +22,7 @@ import Table from './Table';
 
 export {
   AppError,
+  ErrorIcon,
   Button,
   ClickOutside,
   Checkbox,

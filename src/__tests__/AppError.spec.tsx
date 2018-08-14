@@ -41,11 +41,10 @@ test('Application Error should set status text', () => {
 });
 
 test('Application Error should set auxiliary text', () => {
-  const appError = mount(<AppError auxiliaryText="foo" />);
-  expect(appError.find('.app-error__auxiliary-text span').text()).toBe('foo');
-});
-
-test('Application Error should set email', () => {
-  const appError = mount(<AppError email="foo" />);
-  expect(appError.find({href: 'mailto:foo'}).text()).toBe('foo');
+  const appError = mount(
+    <AppError auxiliaryText="aux text" email="email@email.com" />
+  );
+  expect(appError.find({href: 'mailto:email@email.com'}).text()).toBe(
+    'aux text'
+  );
 });
