@@ -1,7 +1,7 @@
 import {withInfo} from '@storybook/addon-info';
 import {storiesOf} from '@storybook/react';
 import React from 'react';
-import {AppError} from '../dist/';
+import {AppError, ErrorIcon} from '../dist/';
 
 storiesOf('AppError', module).add(
   'overview',
@@ -19,12 +19,30 @@ storiesOf('AppError', module).add(
       email?: string;
       tag?: string;
     }
+    
+    interface ErrorIconProps {
+      backgroundColor?: string;
+      signColor?: string;
+    }
     ~~~
     `)(() => (
     <div className="container">
       <div className="row">
         <div className="col-md-6 automargin">
           <AppError />
+        </div>
+      </div>
+    </div>
+  ))
+);
+
+storiesOf('AppError', module).add(
+  'error icon',
+  withInfo('')(() => (
+    <div className="container">
+      <div className="row">
+        <div className="col-md-6 automargin">
+          <ErrorIcon />
         </div>
       </div>
     </div>

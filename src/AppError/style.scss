@@ -14,26 +14,6 @@
     text-align: center;
 
     @include rem(font-size, 96px);
-
-    .red_circle {
-      margin: 0 auto;
-      background-color: $red;
-      border-radius: 50%;
-
-      @include rem(width, 96px);
-      @include rem(height, 96px);
-
-      .status_icon {
-        display: inline-block;
-        margin: 0;
-        position: relative;
-        vertical-align: middle;
-        color: $white;
-        transform: scale(2);
-
-        @include rem(top, -16px);
-      }
-    }
   }
 
   &__status-text {
@@ -51,7 +31,9 @@
   }
 
   &__description {
+    margin-bottom: 0;
     color: $text;
+    text-align: center;
     letter-spacing: normal;
     line-height: 1.64;
 
@@ -63,7 +45,7 @@
   }
 
   &__action {
-    margin-top: 4.375rem;
+    margin-top: 6rem;
 
     .btn {
       @include rem(min-width, 150px);
@@ -72,11 +54,7 @@
   }
 
   &__auxiliary-text {
-    margin-top: 8rem;
-
-    span {
-      color: $text;
-    }
+    margin-top: 6rem;
 
     a {
       color: $blue;
