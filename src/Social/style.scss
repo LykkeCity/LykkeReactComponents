@@ -50,6 +50,31 @@
     }
   }
 
+  &--small {
+    padding: 0;
+
+    > li {
+      display: inline-block;
+
+      @include rem(margin-right, 16px);
+
+      > a {
+        color: #8c94a0;
+
+        @include rem(height, 24px);
+        @include rem(width, 24px);
+
+        > i {
+          @include rem(font-size, 16px);
+        }
+
+        &:hover {
+          color: #8c94a0;
+        }
+      }
+    }
+  }
+
   &--description {
     > li {
       display: inline-block;

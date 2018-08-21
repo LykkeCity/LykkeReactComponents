@@ -8,6 +8,7 @@ import './Dialog';
 import './Dropdown';
 import './Error404';
 import './Footer';
+import './Header';
 import './Icon';
 import './Input';
 import './Link';
