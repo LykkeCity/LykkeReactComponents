@@ -8,5 +8,6 @@ import './Error404';
 import './Footer';
 import './Icon';
 import './Select';
+import './SimpleChart';
 import './Social';
 import './Table';

@@ -17,6 +17,7 @@ import Icon from './Icon';
 import OptGroup from './Select/OptGroup';
 import Option from './Select/Option';
 import Select from './Select/Select';
+import {SimpleChart} from './SimpleChart';
 import Social from './Social';
 import Table from './Table';
 
@@ -39,6 +40,7 @@ export {
   OptGroup,
   Option,
   Select,
+  SimpleChart,
   Social,
   Table
 };

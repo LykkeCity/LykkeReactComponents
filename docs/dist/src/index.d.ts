@@ -16,6 +16,7 @@ import Icon from './Icon';
 import OptGroup from './Select/OptGroup';
 import Option from './Select/Option';
 import Select from './Select/Select';
+import { SimpleChart } from './SimpleChart';
 import Social from './Social';
 import Table from './Table';
-export { AppError, ErrorIcon, Button, ClickOutside, Checkbox, Dialog, Dropdown, DropdownPosition, DropdownContainer, DropdownControl, DropdownList, DropdownListItem, Error404, Footer, Icon, OptGroup, Option, Select, Social, Table };
+export { AppError, ErrorIcon, Button, ClickOutside, Checkbox, Dialog, Dropdown, DropdownPosition, DropdownContainer, DropdownControl, DropdownList, DropdownListItem, Error404, Footer, Icon, OptGroup, Option, Select, SimpleChart, Social, Table };
