@@ -18,6 +18,7 @@ import DropdownList from './Dropdown/DropdownList';
 import DropdownListItem from './Dropdown/DropdownListItem';
 import Error404 from './Error404';
 import Footer from './Footer';
+import Header from './Header/Header';
 import Icon from './Icon';
 import Input from './Input';
 import Link from './Link';
@@ -60,6 +61,7 @@ export {
   DropdownListItem,
   Error404,
   Footer,
+  Header,
   Icon,
   Input,
   Link,
