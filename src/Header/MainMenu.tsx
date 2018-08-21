@@ -52,11 +52,7 @@ export const MainMenu: React.SFC<MainMenuProps> = ({
       </div>
       <Dropdown className="more-dropdown">
         <DropdownControl>
-          <div
-            className={classnames(
-              'main-menu__item main-menu__item_more hidden'
-            )}
-          >
+          <div className="main-menu__item main-menu__item_more hidden">
             <a href="#">
               <span className="main-menu__item-text">More</span>
             </a>

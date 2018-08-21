@@ -2,6 +2,7 @@ import classnames from 'classnames';
 import React from 'react';
 import {Dropdown, DropdownContainer, DropdownControl} from '../Dropdown';
 import {AppLinks} from './AppLinks';
+import {GetStartedButton} from './GetStartedButton';
 import {MainMenu, MenuItem} from './MainMenu';
 import {MobileMenu} from './MobileMenu';
 import {UserAvatar} from './UserAvatar';
@@ -38,6 +39,7 @@ export class Header extends React.Component<HeaderProps, HeaderState> {
       userName,
       email,
       activeMenuItem,
+      onLogout,
       ...props
     } = this.props;
 
@@ -61,7 +63,7 @@ export class Header extends React.Component<HeaderProps, HeaderState> {
                     <UserMenu
                       userName={userName}
                       email={email}
-                      onLogout={this.props.onLogout}
+                      onLogout={onLogout}
                     />
                   </DropdownContainer>
                 </Dropdown>
@@ -87,14 +89,7 @@ export class Header extends React.Component<HeaderProps, HeaderState> {
           {userName ? (
             <UserAvatar userName={userName} />
           ) : (
-            <div className="header__mobile-get-started">
-              <a
-                href="http://lykke.com/site/signin"
-                className="btn btn-primary"
-              >
-                Get started
-              </a>
-            </div>
+            <GetStartedButton className="header__mobile-get-started" />
           )}
         </div>
         <MobileMenu

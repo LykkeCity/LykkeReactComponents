@@ -1,6 +1,7 @@
 import classnames from 'classnames';
 import React from 'react';
 import {AppLinks} from './AppLinks';
+import {GetStartedButton} from './GetStartedButton';
 import {MainMenu} from './MainMenu';
 import {SecondaryMenu} from './SecondaryMenu';
 import {UserAvatar} from './UserAvatar';
@@ -24,11 +25,7 @@ export const MobileMenu: React.SFC<MobileMenuProps> = ({
         {userName ? (
           <UserAvatar userName={userName} />
         ) : (
-          <div className="mobile-menu__get-started">
-            <a href="http://lykke.com/site/signin" className="btn btn-primary">
-              Get started
-            </a>
-          </div>
+          <GetStartedButton className="mobile-menu__get-started" />
         )}
       </div>
       <div className="mobile-menu__actions">
