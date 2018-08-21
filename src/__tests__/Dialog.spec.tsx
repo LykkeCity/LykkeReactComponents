@@ -1,9 +1,6 @@
-import Enzyme, {mount} from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import {mount} from 'enzyme';
 import React from 'react';
 import {Dialog} from '../Dialog';
-
-Enzyme.configure({adapter: new Adapter()});
 
 test('Dialog should be div by default', () => {
   const dialog = mount(<Dialog />);

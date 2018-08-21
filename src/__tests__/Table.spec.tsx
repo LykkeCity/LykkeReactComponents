@@ -1,9 +1,6 @@
-import Enzyme, {shallow} from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import {shallow} from 'enzyme';
 import React from 'react';
 import {Table} from '../Table';
-
-Enzyme.configure({adapter: new Adapter()});
 
 test('Table should set className', () => {
   const table = shallow(<Table className="foo" />);

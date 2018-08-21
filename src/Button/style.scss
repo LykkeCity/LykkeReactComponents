@@ -1,0 +1,19 @@
+.btn {
+  &.btn--link {
+    color: #0388ef;
+    font-weight: 600;
+
+    &:not([disabled]):hover {
+      color: #037ddb !important;
+    }
+
+    &[disabled] {
+      background: none !important;
+      color: rgba(63, 77, 96, 0.3) !important;
+
+      &[disabled]:hover {
+        color: rgba(63, 77, 96, 0.3) !important;
+      }
+    }
+  }
+}

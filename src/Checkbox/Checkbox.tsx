@@ -1,5 +1,6 @@
 import classnames from 'classnames';
 import React from 'react';
+import {Icon} from '../Icon';
 import './style.css';
 
 export interface CheckboxProps {
@@ -42,6 +43,7 @@ export class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
           checked={checked}
           onChange={this.handleToggle}
         />
+        <Icon type="check_thin" />
         <span>{label}</span>
       </label>
     );

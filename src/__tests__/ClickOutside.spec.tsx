@@ -1,9 +1,6 @@
-import Enzyme, {mount} from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import {mount} from 'enzyme';
 import React from 'react';
 import {ClickOutside} from '../ClickOutside';
-
-Enzyme.configure({adapter: new Adapter()});
 
 const onClick = jest.fn();
 const getTestBlockWithClickOutside = (onClickOutside?: () => void) => (

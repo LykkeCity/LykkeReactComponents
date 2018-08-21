@@ -1,9 +1,6 @@
-import Enzyme, {mount, shallow} from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import {mount} from 'enzyme';
 import React from 'react';
 import {Button} from '../Button';
-
-Enzyme.configure({adapter: new Adapter()});
 
 const onClick = jest.fn();
 const getTestButton = (tag?: string) => (
@@ -13,18 +10,24 @@ const getTestButton = (tag?: string) => (
 );
 
 test('Button should render children', () => {
-  const button = mount(getTestButton());
-  expect(button.text()).toBe('Foo');
+  const wrapper = mount(getTestButton());
+  expect(wrapper.text()).toBe('Foo');
+});
+
+test('Button should render default classes', () => {
+  const wrapper = mount(getTestButton());
+  expect(wrapper.find('.btn--primary')).toHaveLength(1);
+  expect(wrapper.find('.btn-md')).toHaveLength(1);
 });
 
 test('Button should call callback function on click', () => {
-  const button = mount(getTestButton());
-  button.simulate('click');
+  const wrapper = mount(getTestButton());
+  wrapper.simulate('click');
   expect(onClick).toBeCalled();
 });
 
 test('Button should render with tag from parameter', () => {
-  const button = mount(getTestButton('button'));
-  expect(button.find('button')).toHaveLength(1);
-  expect(button.find('div')).toHaveLength(0);
+  const wrapper = mount(getTestButton('button'));
+  expect(wrapper.find('button')).toHaveLength(1);
+  expect(wrapper.find('div')).toHaveLength(0);
 });

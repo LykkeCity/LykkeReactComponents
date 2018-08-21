@@ -1,9 +1,6 @@
-import Enzyme, {mount, shallow} from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import {mount, shallow} from 'enzyme';
 import React from 'react';
 import {AppError} from '../AppError';
-
-Enzyme.configure({adapter: new Adapter()});
 
 test('Application Error section should be div by default', () => {
   const appError = shallow(<AppError />);

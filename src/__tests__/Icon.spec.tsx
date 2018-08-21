@@ -1,9 +1,6 @@
-import Enzyme, {shallow} from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import {shallow} from 'enzyme';
 import React from 'react';
 import {Icon} from '../Icon';
-
-Enzyme.configure({adapter: new Adapter()});
 
 test('Icon should be i by default', () => {
   const icon = shallow(<Icon type="foo" />);

@@ -1,0 +1,16 @@
+@import '../utils';
+
+.horizontal-bar {
+  background: rgba(0, 0, 0, 0.2);
+  height: 1px;
+  width: 100%;
+}
+
+.vertical-bar {
+  background: rgba(0, 0, 0, 0.2);
+  position: relative;
+  min-height: 32px;
+  height: 100%;
+  width: 1px;
+  @include rem(margin, 0 15px);
+}

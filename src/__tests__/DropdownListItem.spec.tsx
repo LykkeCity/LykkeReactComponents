@@ -1,9 +1,6 @@
-import Enzyme, {mount, shallow} from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import {mount, shallow} from 'enzyme';
 import React from 'react';
 import {DropdownListItem} from '../Dropdown';
-
-Enzyme.configure({adapter: new Adapter()});
 
 test('Dropdown List Item should render children', () => {
   const dropdownListItem = mount(<DropdownListItem>Foo</DropdownListItem>);
