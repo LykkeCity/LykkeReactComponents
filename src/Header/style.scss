@@ -1,6 +1,6 @@
 @import '../utils';
 
-.header {
+.lykke-header {
   background: $text;
   position: fixed;
   height: 60px;
@@ -310,7 +310,7 @@
       }
     }
 
-    .header__mobile-icon {
+    .lykke-header__mobile-icon {
       background-image: url('../img/user_default.svg');
       background-repeat: no-repeat;
       background-size: 32px;
@@ -319,7 +319,7 @@
       margin: 14px 20px;
     }
 
-    .header__mobile-get-started {
+    .lykke-header__mobile-get-started {
       margin: 9px 20px;
 
       .btn-primary {

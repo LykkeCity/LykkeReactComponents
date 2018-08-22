@@ -22,7 +22,7 @@ describe('<Header>', () => {
     const wrapper = mount(
       <Header userName="Foo Bar" onLogout={handleLogout} />
     );
-    expect(wrapper.find('.header__user-name').text()).toBe('Foo Bar');
+    expect(wrapper.find('.lykke-header__user-name').text()).toBe('Foo Bar');
   });
 
   it('should toggle mobile menu', () => {

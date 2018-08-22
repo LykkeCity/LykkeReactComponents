@@ -44,19 +44,22 @@ export class Header extends React.Component<HeaderProps, HeaderState> {
     } = this.props;
 
     return (
-      <Tag {...props} className={classnames('header', className)}>
-        <div className="header__desktop-row">
+      <Tag {...props} className={classnames('lykke-header', className)}>
+        <div className="lykke-header__desktop-row">
           <div className="logo">
             <a href="/" />
           </div>
-          <MainMenu className="header__main-menu" activeItem={activeMenuItem} />
-          <div className="header__actions">
-            <AppLinks className="header__app-links" />
-            <div className="header__user-info">
+          <MainMenu
+            className="lykke-header__main-menu"
+            activeItem={activeMenuItem}
+          />
+          <div className="lykke-header__actions">
+            <AppLinks className="lykke-header__app-links" />
+            <div className="lykke-header__user-info">
               {userName ? (
-                <Dropdown className="header__user-dropdown">
+                <Dropdown className="lykke-header__user-dropdown">
                   <DropdownControl>
-                    <span className="header__user-name">{userName}</span>
+                    <span className="lykke-header__user-name">{userName}</span>
                     <UserAvatar userName={userName} />
                   </DropdownControl>
                   <DropdownContainer>
@@ -78,7 +81,7 @@ export class Header extends React.Component<HeaderProps, HeaderState> {
             </div>
           </div>
         </div>
-        <div className="header__mobile-row">
+        <div className="lykke-header__mobile-row">
           <a
             href="#"
             onClick={this.toggleMobileMenu}
@@ -89,14 +92,14 @@ export class Header extends React.Component<HeaderProps, HeaderState> {
           {userName ? (
             <UserAvatar userName={userName} />
           ) : (
-            <GetStartedButton className="header__mobile-get-started" />
+            <GetStartedButton className="lykke-header__mobile-get-started" />
           )}
         </div>
         <MobileMenu
           onCloseClick={this.toggleMobileMenu}
           userName={userName}
-          className={classnames('header__mobile-menu', {
-            'header__mobile-menu_active': this.state.isMobileMenuVisible
+          className={classnames('lykke-header__mobile-menu', {
+            'lykke-header__mobile-menu_active': this.state.isMobileMenuVisible
           })}
         />
       </Tag>
