@@ -7,5 +7,5 @@ const getTestHBar = () => <HBar />;
 test('HBar should render div', () => {
   const wrapper = mount(getTestHBar());
   expect(wrapper.find('div')).toHaveLength(1);
-  expect(wrapper.find('.horizontal-bar')).toHaveLength(1);
+  expect(wrapper.find('.lykke-horizontal-bar')).toHaveLength(1);
 });

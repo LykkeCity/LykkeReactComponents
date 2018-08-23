@@ -39,15 +39,15 @@ class Tabs extends React.Component<TabsProps, TabsState> {
     } = this.props;
 
     return (
-      <Tag className={classNames('tabs', className)}>
-        <div className="tabs-labels">
+      <Tag className={classNames('lykke-tabs', className)}>
+        <div className="lykke-tabs-labels">
           {this.tabs.map((tab: any, index: number) => (
             <div
               className={classNames(
                 {
                   active: this.state.activeTab === index
                 },
-                'tab-label'
+                'lykke-tab-label'
               )}
               key={`tab_${index}`}
               onClick={this.onTabChange.bind(this, index)}

@@ -222,12 +222,12 @@ export class Select extends React.Component<SelectProps, SelectState> {
     return (
       <Dropdown
         trigger="click"
-        className={classnames('select-dropdown', className)}
+        className={classnames('lykke-select-dropdown', className)}
         isOpen={this.state.isOpen}
         onOpen={this.handleSelectOpen}
         onClose={this.handleSelectClose}
       >
-        <DropdownControl className="select-dropdown__control">
+        <DropdownControl className="lykke-select-dropdown__control">
           {this.selectedOption ? (
             selectRenderer ? (
               selectRenderer(this.selectedOption)
@@ -236,15 +236,15 @@ export class Select extends React.Component<SelectProps, SelectState> {
             )
           ) : (
             placeholder && (
-              <span className="select-dropdown__placeholder">
+              <span className="lykke-select-dropdown__placeholder">
                 {placeholder}
               </span>
             )
           )}
           <span className="icon icon--chevron-thin-down pull-right" />
         </DropdownControl>
-        <DropdownContainer className="select-dropdown__container">
-          <div className="select-dropdown__search">
+        <DropdownContainer className="lykke-select-dropdown__container">
+          <div className="lykke-select-dropdown__search">
             <input
               type="text"
               className="form-control"

@@ -36,10 +36,12 @@ class Input extends React.Component<InputProps, ValidationState> {
 
   render() {
     return (
-      <div className={classNames('input-container', this.props.className)}>
-        <div className="input-container__title">Name</div>
+      <div
+        className={classNames('lykke-input-container', this.props.className)}
+      >
+        <div className="lykke-input-container__title">Name</div>
         <div
-          className={classNames('input-container__field', {
+          className={classNames('lykke-input-container__field', {
             valid: this.state.isValid
           })}
         >
@@ -50,7 +52,7 @@ class Input extends React.Component<InputProps, ValidationState> {
           />
         </div>
         {!this.state.isValid ? (
-          <div className="input-container__validation-error">
+          <div className="lykke-input-container__validation-error">
             {this.state.errorMessage}
           </div>
         ) : null}

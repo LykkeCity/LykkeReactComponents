@@ -22,9 +22,9 @@ export const List: React.SFC<ListProps> = ({
   const Tag = listType === ListType.Ordered ? 'ol' : 'ul';
 
   return (
-    <Tag {...attributes} className={classnames('list', className)}>
+    <Tag {...attributes} className={classnames('lykke-list', className)}>
       {options.map((option: any, index: number) => (
-        <li className="list__item" key={`list-item-${index}`}>
+        <li className="lykke-list__item" key={`list-item-${index}`}>
           {option}
         </li>
       ))}

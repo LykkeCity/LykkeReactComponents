@@ -22,21 +22,21 @@ test('Option should handle isVisible property', () => {
 test('Option should handle isSelected property', () => {
   let option = mount(<Option />);
   expect(
-    option.find('.select-dropdown__option_selected').hostNodes()
+    option.find('.lykke-select-dropdown__option_selected').hostNodes()
   ).toHaveLength(0);
   option = mount(<Option isSelected={true} />);
   expect(
-    option.find('.select-dropdown__option_selected').hostNodes()
+    option.find('.lykke-select-dropdown__option_selected').hostNodes()
   ).toHaveLength(1);
 });
 
 test('Option should handle isFocused property', () => {
   let option = mount(<Option />);
   expect(
-    option.find('.select-dropdown__option_focused').hostNodes()
+    option.find('.lykke-select-dropdown__option_focused').hostNodes()
   ).toHaveLength(0);
   option = mount(<Option isFocused={true} />);
   expect(
-    option.find('.select-dropdown__option_focused').hostNodes()
+    option.find('.lykke-select-dropdown__option_focused').hostNodes()
   ).toHaveLength(1);
 });

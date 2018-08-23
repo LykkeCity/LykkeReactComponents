@@ -14,5 +14,5 @@ test('Social should render 8 icons', () => {
 
 test('Social should have class from theme', () => {
   const social = shallow(<Social theme="footer" />);
-  expect(social.closest('ul').hasClass('social--footer')).toBe(true);
+  expect(social.closest('ul').hasClass('lykke-social--footer')).toBe(true);
 });

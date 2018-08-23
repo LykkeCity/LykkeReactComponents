@@ -1,6 +1,6 @@
 @import '../utils';
 
-.checkbox-container {
+.lykke-checkbox-container {
   position: relative;
   font-weight: normal;
   line-height: 1.25;
@@ -29,11 +29,11 @@
     }
   }
 
-  .checkbox {
+  .lykke-checkbox {
     display: none !important;
   }
 
-  .checkbox:checked + i {
+  .lykke-checkbox:checked + i {
     display: inline-block;
     position: absolute;
     top: 5px;
@@ -44,7 +44,7 @@
     @include rem(font-size, 13px);
   }
 
-  .checkbox:checked + i + span {
+  .lykke-checkbox:checked + i + span {
     &:before {
       border: none;
       background-color: #0388ef;
@@ -52,7 +52,7 @@
   }
 }
 
-.checkbox-group {
+.lykke-checkbox-group {
   list-style-type: none;
 
   &__item {

@@ -22,9 +22,9 @@ export class CheckboxGroup extends React.Component<CheckboxGroupProps> {
     } = this.props;
 
     return (
-      <Tag className={classNames('checkbox-group', className)}>
+      <Tag className={classNames('lykke-checkbox-group', className)}>
         {children.map((checkbox: any, index: number) => (
-          <li className="checkbox-group__item" key={`checkbox-${index}`}>
+          <li className="lykke-checkbox-group__item" key={`checkbox-${index}`}>
             {checkbox}
           </li>
         ))}

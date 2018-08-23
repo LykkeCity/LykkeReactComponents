@@ -28,7 +28,7 @@ describe('<Tabs>', () => {
 
   it('should render titles of all tabs', () => {
     const wrapper = shallow(getTestTabs());
-    const testTabTitles = wrapper.find('.tab-label');
+    const testTabTitles = wrapper.find('.lykke-tab-label');
     expect(testTabTitles.at(0).text()).toBe('Test 1');
     expect(testTabTitles.at(1).text()).toBe('Test 2');
     expect(testTabTitles).toHaveLength(2);
@@ -36,14 +36,14 @@ describe('<Tabs>', () => {
 
   it('should set first tab active by default', () => {
     const wrapper = shallow(getTestTabs());
-    const firstTabTitle = wrapper.find('.tab-label').at(0);
+    const firstTabTitle = wrapper.find('.lykke-tab-label').at(0);
     expect(wrapper.state('activeTab')).toBe(0);
     expect(firstTabTitle.hasClass('active')).toBe(true);
   });
 
   it('should change active tab state when we click on non-active tab', () => {
     const wrapper = shallow(getTestTabs());
-    const secondTabTitle = wrapper.find('.tab-label').at(1);
+    const secondTabTitle = wrapper.find('.lykke-tab-label').at(1);
     secondTabTitle.simulate('click');
     expect(wrapper.state('activeTab')).toBe(1);
   });

@@ -25,7 +25,7 @@ test('PasswordInput should set className from parameters', () => {
 
 test('PasswordInput should change type on icon click', () => {
   const wrapper = mount(getTestPasswordInput());
-  const toggleIcon = wrapper.find('.password-toggle');
+  const toggleIcon = wrapper.find('.lykke-password-toggle');
 
   toggleIcon.simulate('click');
   expect(wrapper.find('input[type="password"]')).toHaveLength(0);

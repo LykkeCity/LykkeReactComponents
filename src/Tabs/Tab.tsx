@@ -14,7 +14,7 @@ const Tab: React.SFC<TabProps> = ({
   /* istanbul ignore next */
   tag: Tag = 'div'
 }) => {
-  return <Tag className={classNames('tab', className)}>{children}</Tag>;
+  return <Tag className={classNames('lykke-tab', className)}>{children}</Tag>;
 };
 
 export default Tab;

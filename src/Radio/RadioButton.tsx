@@ -27,10 +27,10 @@ export class RadioButton extends React.Component<RadioButtonProps> {
     const {value, groupName, className, label} = this.props;
 
     return (
-      <label className={classnames('radiobutton-container', className)}>
+      <label className={classnames('lykke-radiobutton-container', className)}>
         <input
           type="radio"
-          className="radiobutton"
+          className="lykke-radiobutton"
           name={groupName}
           value={value}
           onChange={this.handleChange}

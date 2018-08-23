@@ -1,6 +1,6 @@
 @import '../utils';
 
-.radiobutton-container {
+.lykke-radiobutton-container {
   position: relative;
   margin-bottom: 0;
   font-weight: normal;
@@ -8,11 +8,11 @@
   color: #333333;
   @include rem(font-size, 18px);
 
-  .radiobutton {
+  .lykke-radiobutton {
     display: none;
   }
 
-  .radiobutton + span {
+  .lykke-radiobutton + span {
     position: relative;
     padding-left: 48px;
     user-select: none;
@@ -31,7 +31,7 @@
     }
   }
 
-  .radiobutton:checked + span {
+  .lykke-radiobutton:checked + span {
     &:before {
       background-color: #0388ef;
     }

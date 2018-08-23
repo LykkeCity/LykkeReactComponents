@@ -41,15 +41,15 @@ export const Message: React.SFC<MessageProps> = ({
   return (
     <div
       {...attributes}
-      className={classnames('message', typeClasses[type], className)}
+      className={classnames('lykke-message', typeClasses[type], className)}
     >
-      <div className="message__title">
+      <div className="lykke-message__title">
         {title || typeTitle[type]}
         {subtitle ? (
-          <span className="message__subtitle"> ⋅ {subtitle}</span>
+          <span className="lykke-message__subtitle"> ⋅ {subtitle}</span>
         ) : null}
       </div>
-      <div className="message__text">{children}</div>
+      <div className="lykke-message__text">{children}</div>
     </div>
   );
 };

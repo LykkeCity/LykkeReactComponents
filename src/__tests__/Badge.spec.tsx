@@ -11,17 +11,17 @@ const getTestBadge = (options: any = {}) => (
 
 test('Badge should render children', () => {
   const wrapper = mount(getTestBadge());
-  expect(wrapper.find('.badge')).toHaveLength(1);
+  expect(wrapper.find('.lykke-badge')).toHaveLength(1);
 });
 
 test('Badge should render default classes', () => {
   const wrapper = mount(getTestBadge());
-  expect(wrapper.find('.badge')).toHaveLength(1);
+  expect(wrapper.find('.lykke-badge')).toHaveLength(1);
 });
 
 test('Badge should render class from parameter', () => {
   const wrapper = mount(getTestBadge({className: 'foo'}));
-  expect(wrapper.find('.badge').hasClass('foo')).toBe(true);
+  expect(wrapper.find('.lykke-badge').hasClass('foo')).toBe(true);
 });
 
 test('Badge should render with tag from parameter', () => {

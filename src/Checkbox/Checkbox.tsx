@@ -36,10 +36,13 @@ export class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
     const {checked} = this.state;
 
     return (
-      <label className={classnames('checkbox-container', className)} {...props}>
+      <label
+        className={classnames('lykke-checkbox-container', className)}
+        {...props}
+      >
         <input
           type="checkbox"
-          className="checkbox"
+          className="lykke-checkbox"
           checked={checked}
           onChange={this.handleToggle}
         />

@@ -28,7 +28,7 @@ class PasswordInput extends React.Component<InputProps, PasswordInputState> {
         type={this.state.type}
         className={this.props.className}
       >
-        <div className="password-toggle" onClick={this.togglePassword}>
+        <div className="lykke-password-toggle" onClick={this.togglePassword}>
           {this.state.type === 'password' ? (
             <i className="icon icon--show_password" />
           ) : (

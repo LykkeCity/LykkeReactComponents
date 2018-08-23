@@ -1,7 +1,7 @@
 @import '../utils';
 @import '../../node_modules/LykkeFramework/assets/scss/partials/form';
 
-.select-dropdown {
+.lykke-select-dropdown {
   &__control {
     border-radius: $border-radius;
     border: solid 1px $gray-25;
@@ -71,7 +71,7 @@
     margin: 0;
     width: 100%;
 
-    .select-dropdown {
+    .lykke-select-dropdown {
       &__option {
         a {
           @include rem(padding-left, 20px);

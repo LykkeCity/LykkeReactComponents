@@ -299,11 +299,11 @@ test('Select should correctly render select control', () => {
   let selectInstance = select.instance() as Select;
 
   expect(
-    select.find('.select-dropdown__control .dropdown__control').text()
+    select.find('.lykke-select-dropdown__control .dropdown__control').text()
   ).toBe('');
   selectInstance.handleOptionClick(options[0]);
   expect(
-    select.find('.select-dropdown__control .dropdown__control').text()
+    select.find('.lykke-select-dropdown__control .dropdown__control').text()
   ).toBe(String(options[0].label));
 
   select = mount(
@@ -318,12 +318,14 @@ test('Select should correctly render select control', () => {
 
   expect(
     select
-      .find('.select-dropdown__control .select-dropdown__placeholder')
+      .find(
+        '.lykke-select-dropdown__control .lykke-select-dropdown__placeholder'
+      )
       .text()
   ).toBe('Select...');
   selectInstance.handleOptionClick(options[0]);
   expect(
-    select.find('.select-dropdown__control .dropdown__control').text()
+    select.find('.lykke-select-dropdown__control .dropdown__control').text()
   ).toBe(String(options[0].label));
 
   const selectRenderer = (option: any) => `foo${option.value}bar`;
@@ -338,11 +340,11 @@ test('Select should correctly render select control', () => {
   selectInstance = select.instance() as Select;
 
   expect(
-    select.find('.select-dropdown__control .dropdown__control').text()
+    select.find('.lykke-select-dropdown__control .dropdown__control').text()
   ).toBe('');
   selectInstance.handleOptionClick(options[0]);
   expect(
-    select.find('.select-dropdown__control .dropdown__control').text()
+    select.find('.lykke-select-dropdown__control .dropdown__control').text()
   ).toBe(`foo${options[0].value}bar`);
 });
 
@@ -355,7 +357,7 @@ test('Select should correctly render option', () => {
 
   expect(
     select
-      .find('.select-dropdown__option')
+      .find('.lykke-select-dropdown__option')
       .first()
       .text()
   ).toBe(String(options[0].label));
@@ -374,7 +376,7 @@ test('Select should correctly render option', () => {
 
   expect(
     select
-      .find('.select-dropdown__option')
+      .find('.lykke-select-dropdown__option')
       .first()
       .text()
   ).toBe(`foo${options[0].value}bar`);

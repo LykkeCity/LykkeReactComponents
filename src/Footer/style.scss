@@ -1,6 +1,6 @@
 @import '../utils';
 
-.footer {
+.lykke-footer {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -54,7 +54,7 @@
       text-align: center;
     }
 
-    .social--footer {
+    .lykke-social--footer {
       > li {
         margin-left: 10px;
       }
@@ -120,7 +120,7 @@
     @include rem(margin-bottom, 38px);
   }
 
-  .social {
+  .lykke-social {
     padding: 0;
     text-align: right;
 
@@ -133,7 +133,7 @@
     }
   }
 
-  .footer_links {
+  .lykke-footer_links {
     white-space: nowrap;
 
     @include rem(padding, 12px 0);
@@ -161,7 +161,7 @@
       margin-bottom: 32px;
     }
 
-    .social {
+    .lykke-social {
       text-align: center;
       margin-bottom: 20px;
 
@@ -170,7 +170,7 @@
       }
     }
 
-    .footer_links {
+    .lykke-footer_links {
       font-size: 13px;
       line-height: 1.7;
     }
@@ -193,7 +193,7 @@
   }
 
   @media all and (max-width: $screen-mobile) {
-    .social {
+    .lykke-social {
       width: 220px;
       margin-left: auto;
       margin-right: auto;
@@ -209,7 +209,7 @@
       }
     }
 
-    .footer_links {
+    .lykke-footer_links {
       padding: 0;
       white-space: normal;
 

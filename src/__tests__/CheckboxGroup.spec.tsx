@@ -17,7 +17,7 @@ test('CheckboxGroup should render checkboxes', () => {
 
 test('Checkbox should render default className', () => {
   const wrapper = mount(getTestCheckboxGroup());
-  expect(wrapper.find('.checkbox-group').hostNodes()).toHaveLength(1);
+  expect(wrapper.find('.lykke-checkbox-group').hostNodes()).toHaveLength(1);
 });
 
 test('Checkbox should set className', () => {

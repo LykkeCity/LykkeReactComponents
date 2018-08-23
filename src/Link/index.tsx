@@ -33,7 +33,7 @@ export const Link: React.SFC<LinkProps> = ({
     <a
       href={href}
       {...attributes}
-      className={classnames('link', typeClasses[color], className)}
+      className={classnames('lykke-link', typeClasses[color], className)}
     >
       {children}
     </a>

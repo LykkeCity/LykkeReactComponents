@@ -1,4 +1,4 @@
 import React from 'react';
 import './style.css';
 
-export default () => <div className="horizontal-bar" />;
+export default () => <div className="lykke-horizontal-bar" />;
