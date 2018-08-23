@@ -12,7 +12,7 @@ const getTestLink = (color?: LinkColor) => (
 test('Link should render a', () => {
   const wrapper = mount(getTestLink());
   expect(wrapper.find('a')).toHaveLength(1);
-  expect(wrapper.find('.link')).toHaveLength(1);
+  expect(wrapper.find('.lykke-link')).toHaveLength(1);
 });
 
 test('Link should render black link', () => {

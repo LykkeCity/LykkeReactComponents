@@ -29,12 +29,14 @@ test('Application Error should set reload button url', () => {
 
 test('Application Error should set description', () => {
   const appError = mount(<AppError description="foo" />);
-  expect(appError.find('.app-error__description').text()).toContain('foo');
+  expect(appError.find('.lykke-app-error__description').text()).toContain(
+    'foo'
+  );
 });
 
 test('Application Error should set status text', () => {
   const appError = mount(<AppError statusText="foo" />);
-  expect(appError.find('.app-error__status-text').text()).toBe('foo');
+  expect(appError.find('.lykke-app-error__status-text').text()).toBe('foo');
 });
 
 test('Application Error should set auxiliary text', () => {

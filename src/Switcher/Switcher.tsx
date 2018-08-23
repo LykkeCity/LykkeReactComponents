@@ -35,10 +35,13 @@ export class Switcher extends React.Component<SwitcherProps, SwitcherState> {
     const {checked} = this.state;
 
     return (
-      <label className={classnames('switcher-container', className)} {...props}>
+      <label
+        className={classnames('lykke-switcher-container', className)}
+        {...props}
+      >
         <input
           type="checkbox"
-          className="switcher"
+          className="lykke-switcher"
           checked={checked}
           onChange={this.handleToggle}
         />

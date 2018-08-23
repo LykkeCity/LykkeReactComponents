@@ -26,19 +26,23 @@ export const AppError: React.SFC<AppErrorProps> = ({
   ...attributes
 }) => {
   return (
-    <Tag {...attributes} className={classnames('app-error', className)}>
-      <div className="app-error__status-code">
+    <Tag {...attributes} className={classnames('lykke-app-error', className)}>
+      <div className="lykke-app-error__status-code">
         <ErrorIcon />
       </div>
-      {statusText && <h2 className="app-error__status-text">{statusText}</h2>}
-      {description && <p className="app-error__description">{description}</p>}
-      <div className="app-error__action text-center">
+      {statusText && (
+        <h2 className="lykke-app-error__status-text">{statusText}</h2>
+      )}
+      {description && (
+        <p className="lykke-app-error__description">{description}</p>
+      )}
+      <div className="lykke-app-error__action text-center">
         <a href={reloadButtonUrl} className="btn btn-sm">
           {reloadButtonText}
         </a>
       </div>
       {auxiliaryText && (
-        <div className="app-error__auxiliary-text text-center">
+        <div className="lykke-app-error__auxiliary-text text-center">
           <a href={`mailto:${email}`}>{auxiliaryText}</a>
         </div>
       )}

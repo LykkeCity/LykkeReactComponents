@@ -25,9 +25,9 @@ export const Option: React.SFC<OptionProps> = ({
     <DropdownListItem className={isVisible ? '' : 'hidden'} {...attributes}>
       <div
         className={classnames(
-          'select-dropdown__option',
-          {'select-dropdown__option_focused': isFocused},
-          {'select-dropdown__option_selected': isSelected},
+          'lykke-select-dropdown__option',
+          {'lykke-select-dropdown__option_focused': isFocused},
+          {'lykke-select-dropdown__option_selected': isSelected},
           className
         )}
       >

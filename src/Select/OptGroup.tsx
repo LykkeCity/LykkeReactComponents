@@ -21,7 +21,9 @@ export const OptGroup: React.SFC<OptGroupProps> = ({
       isCategory={true}
       {...attributes}
     >
-      <div className={classnames('select-dropdown__option-group', className)}>
+      <div
+        className={classnames('lykke-select-dropdown__option-group', className)}
+      >
         {children}
       </div>
     </DropdownListItem>

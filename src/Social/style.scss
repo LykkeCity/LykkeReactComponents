@@ -1,6 +1,6 @@
 @import '../utils';
 
-.social {
+.lykke-social {
   &__item {
     text-decoration: none !important;
 
@@ -167,7 +167,7 @@
   }
 }
 
-.social_share {
+.lykke-social_share {
   text-align: center;
 
   @include rem(margin-bottom, 60px);

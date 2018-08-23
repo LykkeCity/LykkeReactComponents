@@ -29,7 +29,9 @@ test('Error 404 should set button url', () => {
 
 test('Error 404 should set description', () => {
   const error404 = mount(<Error404 description="foo" />);
-  expect(error404.find('.error-404__description').text()).toContain('foo');
+  expect(error404.find('.lykke-error-404__description').text()).toContain(
+    'foo'
+  );
 });
 
 test('Error 404 should set email', () => {
@@ -39,5 +41,5 @@ test('Error 404 should set email', () => {
 
 test('Error 404 should set status text', () => {
   const error404 = mount(<Error404 statusText="foo" />);
-  expect(error404.find('.error-404__status-text').text()).toBe('foo');
+  expect(error404.find('.lykke-error-404__status-text').text()).toBe('foo');
 });

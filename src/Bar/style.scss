@@ -1,12 +1,12 @@
 @import '../utils';
 
-.horizontal-bar {
+.lykke-horizontal-bar {
   background: rgba(0, 0, 0, 0.2);
   height: 1px;
   width: 100%;
 }
 
-.vertical-bar {
+.lykke-vertical-bar {
   background: rgba(0, 0, 0, 0.2);
   position: relative;
   min-height: 32px;

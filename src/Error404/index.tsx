@@ -23,17 +23,19 @@ export const Error404: React.SFC<Error404Props> = ({
   ...attributes
 }) => {
   return (
-    <Tag {...attributes} className={classnames('error-404', className)}>
-      <div className="error-404__status-code">
+    <Tag {...attributes} className={classnames('lykke-error-404', className)}>
+      <div className="lykke-error-404__status-code">
         4<span className="status_icon status_icon--warning" />4
       </div>
-      {statusText && <h2 className="error-404__status-text">{statusText}</h2>}
+      {statusText && (
+        <h2 className="lykke-error-404__status-text">{statusText}</h2>
+      )}
       {description && (
-        <p className="error-404__description">
+        <p className="lykke-error-404__description">
           {description} {email && <a href={`mailto:${email}`}>{email}</a>}
         </p>
       )}
-      <div className="error-404__action text-center">
+      <div className="lykke-error-404__action text-center">
         <a href={buttonUrl} className="btn btn-sm">
           {buttonText}
         </a>

@@ -18,7 +18,10 @@ const Badge: React.SFC<BadgeProps> = ({
   ...attributes
 }) => {
   return (
-    <Tag {...attributes} className={classnames('badge', color, className)}>
+    <Tag
+      {...attributes}
+      className={classnames('lykke-badge', color, className)}
+    >
       {children}
     </Tag>
   );

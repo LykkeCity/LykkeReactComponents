@@ -1,17 +1,17 @@
 @import '../utils';
 
-.switcher-container {
+.lykke-switcher-container {
   position: relative;
   font-weight: normal;
   line-height: 1.25;
   color: #333333;
   @include rem(font-size, 16px);
 
-  .switcher {
+  .lykke-switcher {
     display: none;
   }
 
-  .switcher + span {
+  .lykke-switcher + span {
     position: relative;
     padding-left: 48px;
     user-select: none;
@@ -45,7 +45,7 @@
     }
   }
 
-  .switcher:checked + span {
+  .lykke-switcher:checked + span {
     &:after {
       left: 16px;
       background-color: #0388ef;

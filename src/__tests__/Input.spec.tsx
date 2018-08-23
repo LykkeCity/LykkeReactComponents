@@ -46,12 +46,16 @@ test('Input should update state with the result of validation function', () => {
 
 test('Input should render validation error if input has invalid state', () => {
   const wrapper = mount(getTestInput());
-  expect(wrapper.find('.input-container__validation-error')).toHaveLength(0);
+  expect(wrapper.find('.lykke-input-container__validation-error')).toHaveLength(
+    0
+  );
 
   const errorMessage = 'Error message';
   wrapper.setState({isValid: false, errorMessage});
-  expect(wrapper.find('.input-container__validation-error')).toHaveLength(1);
-  expect(wrapper.find('.input-container__validation-error').text()).toBe(
+  expect(wrapper.find('.lykke-input-container__validation-error')).toHaveLength(
+    1
+  );
+  expect(wrapper.find('.lykke-input-container__validation-error').text()).toBe(
     errorMessage
   );
 });

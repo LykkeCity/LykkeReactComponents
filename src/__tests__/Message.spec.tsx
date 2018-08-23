@@ -16,13 +16,13 @@ const getTestMessage = (options: any = {}) => (
 
 test('Message should render content', () => {
   const wrapper = mount(getTestMessage());
-  expect(wrapper.find('.message__title')).toHaveLength(1);
-  expect(wrapper.find('.message__text')).toHaveLength(1);
+  expect(wrapper.find('.lykke-message__title')).toHaveLength(1);
+  expect(wrapper.find('.lykke-message__text')).toHaveLength(1);
 });
 
 test('Message should set default className', () => {
   const wrapper = mount(getTestMessage());
-  expect(wrapper.find('.message').hostNodes()).toHaveLength(1);
+  expect(wrapper.find('.lykke-message').hostNodes()).toHaveLength(1);
   expect(wrapper.find('.note').hostNodes()).toHaveLength(1);
 });
 
@@ -34,26 +34,28 @@ test('Message should set className from parameters', () => {
 
 test('Message should render default title related to message type', () => {
   let wrapper = mount(getTestMessage({type: MessageType.Note}));
-  expect(wrapper.find('.message__title').text()).toBe('Note');
+  expect(wrapper.find('.lykke-message__title').text()).toBe('Note');
 
   wrapper = mount(getTestMessage({type: MessageType.Identified}));
-  expect(wrapper.find('.message__title').text()).toBe('Identified');
+  expect(wrapper.find('.lykke-message__title').text()).toBe('Identified');
 
   wrapper = mount(getTestMessage({type: MessageType.Update}));
-  expect(wrapper.find('.message__title').text()).toBe('Update');
+  expect(wrapper.find('.lykke-message__title').text()).toBe('Update');
 
   wrapper = mount(getTestMessage({type: MessageType.Information}));
-  expect(wrapper.find('.message__title').text()).toBe('Information');
+  expect(wrapper.find('.lykke-message__title').text()).toBe('Information');
 });
 
 test('Message should not render subtitle if subtitle not passed in parameters', () => {
   const wrapper = mount(getTestMessage());
-  expect(wrapper.find('.message__subtitle').hostNodes()).toHaveLength(0);
+  expect(wrapper.find('.lykke-message__subtitle').hostNodes()).toHaveLength(0);
 });
 
 test('Message should render subtitle from parameters', () => {
   const subtitle = '12:32 CET';
   const wrapper = mount(getTestMessage({subtitle}));
-  expect(wrapper.find('.message__subtitle').hostNodes()).toHaveLength(1);
-  expect(wrapper.find('.message__subtitle').text()).toBe(` ⋅ ${subtitle}`);
+  expect(wrapper.find('.lykke-message__subtitle').hostNodes()).toHaveLength(1);
+  expect(wrapper.find('.lykke-message__subtitle').text()).toBe(
+    ` ⋅ ${subtitle}`
+  );
 });
