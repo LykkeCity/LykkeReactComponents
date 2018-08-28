@@ -21,35 +21,32 @@ export const MainMenu: React.SFC<MainMenuProps> = ({
 }) => {
   return (
     <div {...attributes} className={classnames('main-menu', className)}>
-      <div
+      <a
+        href="http://trade.lykke.com"
         className={classnames('main-menu__item main-menu__item_trade', {
           'main-menu__item_active': activeItem === MenuItem.Trade
         })}
       >
-        <a href="http://trade.lykke.com">
-          <span className="main-menu__item-text">Trade</span>
-        </a>
-      </div>
-      <div
+        <span className="main-menu__item-text">Trade</span>
+      </a>
+      <a
+        href="http://wallet.lykke.com"
         className={classnames('main-menu__item main-menu__item_funds', {
           'main-menu__item_active': activeItem === MenuItem.Funds
         })}
       >
-        <a href="http://wallet.lykke.com">
-          <span className="main-menu__item-text">Funds</span>
-        </a>
-      </div>
-      <div
+        <span className="main-menu__item-text">Funds</span>
+      </a>
+      <a
+        href="#"
         className={classnames(
           'main-menu__item main-menu__item_profile',
           {'main-menu__item_active': activeItem === MenuItem.Profile},
           'hidden'
         )}
       >
-        <a href="#">
-          <span className="main-menu__item-text">Profile</span>
-        </a>
-      </div>
+        <span className="main-menu__item-text">Profile</span>
+      </a>
       <Dropdown className="more-dropdown">
         <DropdownControl>
           <div className="main-menu__item main-menu__item_more hidden">

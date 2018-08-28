@@ -90,7 +90,18 @@ export class Header extends React.Component<HeaderProps, HeaderState> {
             {activeMenuItem}
           </a>
           {userName ? (
-            <UserAvatar userName={userName} />
+            <Dropdown className="lykke-header__user-dropdown">
+              <DropdownControl>
+                <UserAvatar userName={userName} />
+              </DropdownControl>
+              <DropdownContainer>
+                <UserMenu
+                  userName={userName}
+                  email={email}
+                  onLogout={onLogout}
+                />
+              </DropdownContainer>
+            </Dropdown>
           ) : (
             <GetStartedButton className="lykke-header__mobile-get-started" />
           )}
