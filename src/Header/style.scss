@@ -3,13 +3,13 @@
 .lykke-header {
   background: $text;
   position: fixed;
-  height: 60px;
+  height: 50px;
   width: 100%;
 
   .logo {
     background: url('../img/logo.svg');
     background-repeat: no-repeat;
-    margin: 13px 0 15px 40px;
+    margin: 8px 0 10px 40px;
 
     a {
       display: block;
@@ -23,10 +23,10 @@
       opacity: 0.6;
       background-repeat: no-repeat;
       background-size: 24px;
-      background-position: 16px 8px;
-      padding: 8px 16px 8px 48px;
+      background-position: 16px 6px;
+      padding: 7px 16px 8px 48px;
       border-radius: 8px;
-      height: 40px;
+      height: 35px;
       line-height: 24px;
       margin-right: 5px;
       cursor: pointer;
@@ -80,7 +80,7 @@
 
   &__main-menu {
     display: flex;
-    margin: 10px 0;
+    margin: 8px 0;
 
     .main-menu__item-text {
       @media all and (max-width: $screen-tablet) {
@@ -160,7 +160,7 @@
 
     &__item {
       background-repeat: no-repeat;
-      margin: 15px 8px;
+      margin: 10px 8px;
 
       a {
         display: block;
@@ -179,10 +179,10 @@
   }
 
   &__user-info {
-    margin: 10px 40px 10px 32px;
+    margin: 7px 40px 10px 32px;
 
     .btn-primary {
-      padding: 10px 20px;
+      padding: 7px 20px;
       text-transform: none;
       font-size: 16px;
       letter-spacing: normal;
@@ -192,15 +192,15 @@
   &__user-icon {
     background-image: url('../img/user_default.svg');
     background-repeat: no-repeat;
-    background-size: 40px;
-    width: 40px;
-    height: 40px;
+    background-size: 35px;
+    width: 35px;
+    height: 35px;
     display: inline-block;
   }
 
   &__user-name {
     cursor: pointer;
-    line-height: 42px;
+    line-height: 38px;
     margin-right: 8px;
     color: #fff;
     font-size: 13px;
@@ -222,7 +222,7 @@
       padding-top: 0;
       margin: 0;
       position: fixed;
-      top: 54px;
+      top: 49px;
       left: unset;
       right: 40px;
 
@@ -310,8 +310,8 @@
       display: block;
       letter-spacing: 1.4px;
       font-size: 12px;
-      padding: 25px 60px;
-      background-position: 20px 18px;
+      padding: 20px 50px;
+      background-position: 20px 13px;
 
       &:hover {
         color: $white;
@@ -331,7 +331,7 @@
       margin: 9px 20px;
 
       .btn-primary {
-        padding: 10px 20px;
+        padding: 5px 20px;
         text-transform: none;
         font-size: 16px;
         letter-spacing: normal;
@@ -348,13 +348,13 @@
     background-color: $blue;
     color: $white;
     text-align: center;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
   }
 
   .mobile-menu {
-    padding: 14px 8px;
+    padding: 10px 8px;
 
     .logo {
       margin: 0 12px;
@@ -410,14 +410,14 @@
       display: block;
       width: 24px;
       height: 24px;
-      margin: 6px 12px;
+      margin: 4px 12px;
     }
 
     &__get-started {
-      margin: 9px 20px;
+      margin: 0px 20px;
 
       .btn-primary {
-        padding: 10px 20px;
+        padding: 5px 20px;
         text-transform: none;
         font-size: 16px;
         letter-spacing: normal;
@@ -475,7 +475,7 @@
       width: 32px;
       height: 32px;
       line-height: 32px;
-      margin: 14px 20px;
+      margin: 10px 20px;
     }
   }
 }
