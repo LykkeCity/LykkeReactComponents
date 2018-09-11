@@ -1,6 +1,7 @@
 import classnames from 'classnames';
 import React from 'react';
 import {Dropdown, DropdownContainer, DropdownControl} from '../Dropdown';
+import {HeaderLinkOptions} from './Header';
 import {SecondaryMenu} from './SecondaryMenu';
 
 export enum MenuItem {
@@ -12,31 +13,29 @@ export enum MenuItem {
 export interface MainMenuProps {
   activeItem?: string;
   className?: string;
+  renderLink: (classes: string, title: JSX.Element, menuItem: MenuItem) => void;
+  headerLinkOptions: HeaderLinkOptions[];
 }
 
 export const MainMenu: React.SFC<MainMenuProps> = ({
   activeItem,
   className,
+  renderLink,
+  headerLinkOptions,
   ...attributes
 }) => {
   return (
     <div {...attributes} className={classnames('main-menu', className)}>
-      <a
-        href="http://trade.lykke.com"
-        className={classnames('main-menu__item main-menu__item_trade', {
-          'main-menu__item_active': activeItem === MenuItem.Trade
-        })}
-      >
-        <span className="main-menu__item-text">Trade</span>
-      </a>
-      <a
-        href="http://wallet.lykke.com"
-        className={classnames('main-menu__item main-menu__item_funds', {
-          'main-menu__item_active': activeItem === MenuItem.Funds
-        })}
-      >
-        <span className="main-menu__item-text">Funds</span>
-      </a>
+      {headerLinkOptions.map(option => {
+        return renderLink(
+          classnames(`main-menu__item main-menu__item_${option.link}`, {
+            hidden: option.isHidden,
+            'main-menu__item_active': activeItem === option.link
+          }),
+          <span className="main-menu__item-text">{option.link}</span>,
+          option.link
+        );
+      })}
       <a
         href="#"
         className={classnames(

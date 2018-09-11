@@ -10,6 +10,11 @@ import {UserMenu} from './UserMenu';
 
 import './style.css';
 
+export interface HeaderLinkOptions {
+  link: MenuItem;
+  isHidden: boolean;
+}
+
 export interface HeaderProps {
   className?: string;
   tag?: string;
@@ -17,6 +22,8 @@ export interface HeaderProps {
   email?: string;
   onLogout: () => void;
   activeMenuItem?: MenuItem | string;
+  renderLink: (classes: string, title: JSX.Element, menuItem: MenuItem) => void;
+  headerLinkOptions: HeaderLinkOptions[];
 }
 
 export interface HeaderState {
@@ -40,6 +47,8 @@ export class Header extends React.Component<HeaderProps, HeaderState> {
       email,
       activeMenuItem,
       onLogout,
+      renderLink,
+      headerLinkOptions,
       ...props
     } = this.props;
 
@@ -52,6 +61,8 @@ export class Header extends React.Component<HeaderProps, HeaderState> {
           <MainMenu
             className="lykke-header__main-menu"
             activeItem={activeMenuItem}
+            headerLinkOptions={headerLinkOptions}
+            renderLink={renderLink}
           />
           <div className="lykke-header__actions">
             <AppLinks className="lykke-header__app-links" />
@@ -112,6 +123,8 @@ export class Header extends React.Component<HeaderProps, HeaderState> {
           className={classnames('lykke-header__mobile-menu', {
             'lykke-header__mobile-menu_active': this.state.isMobileMenuVisible
           })}
+          headerLinkOptions={headerLinkOptions}
+          renderLink={renderLink}
         />
       </Tag>
     );
