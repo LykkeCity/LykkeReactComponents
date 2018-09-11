@@ -1,45 +1,7 @@
 import {mount, shallow} from 'enzyme';
 import React from 'react';
-import {MenuItem} from '../Header/MainMenu';
 import {MobileMenu} from '../Header/MobileMenu';
-
-const headerLinkOptions = [
-  {
-    isHidden: false,
-    link: MenuItem.Trade
-  },
-  {
-    isHidden: false,
-    link: MenuItem.Funds
-  },
-  {
-    isHidden: true,
-    link: MenuItem.Profile
-  }
-];
-
-const getLinkUrl = (menuItem: MenuItem) => {
-  switch (menuItem) {
-    case MenuItem.Trade: {
-      return 'http://trade.lykke.com';
-    }
-    case MenuItem.Funds: {
-      return 'http://wallet.lykke.com';
-    }
-    default:
-      return '';
-  }
-};
-
-const renderLink = (
-  classes: string,
-  title: JSX.Element,
-  menuItem: MenuItem
-) => (
-  <a href={getLinkUrl(menuItem)} className={classes}>
-    {title}
-  </a>
-);
+import {headerLinkOptions, renderLink} from './Header.spec';
 
 describe('<MobileMenu>', () => {
   it('should add custom class name', () => {

@@ -6,34 +6,24 @@ import {MenuItem} from '../dist/Header/MainMenu';
 
 const headerLinkOptions = [
   {
-    isHidden: false,
-    link: MenuItem.Trade
+    title: MenuItem.Trade,
+    url: 'http://trade.lykke.com'
   },
   {
-    isHidden: false,
-    link: MenuItem.Funds
+    title: MenuItem.Funds,
+    url: 'http://wallet.lykke.com'
   },
   {
-    isHidden: true,
-    link: MenuItem.Profile
+    title: MenuItem.Profile,
+    url: '#'
   }
 ];
 
-const getLinkUrl = (menuItem: MenuItem) => {
-  switch (menuItem) {
-    case MenuItem.Trade: {
-      return 'http://trade.lykke.com';
-    }
-    case MenuItem.Funds: {
-      return 'http://wallet.lykke.com';
-    }
-    case MenuItem.Profile: {
-      return '#';
-    }
-    default:
-      return '#';
-  }
-};
+const renderLink = (classes: string, title: JSX.Element, url: string) => (
+  <a href={url} className={classes}>
+    {title}
+  </a>
+);
 
 // tslint:disable:jsx-no-lambda
 storiesOf('Header', module).add('unauthorized', () => (
@@ -41,11 +31,7 @@ storiesOf('Header', module).add('unauthorized', () => (
     onLogout={action('logout')}
     activeMenuItem="trade"
     headerLinkOptions={headerLinkOptions}
-    renderLink={(classes: string, title: JSX.Element, menuItem: MenuItem) => (
-      <a href={getLinkUrl(menuItem)} className={classes}>
-        {title}
-      </a>
-    )}
+    renderLink={renderLink}
   />
 ));
 
@@ -56,10 +42,6 @@ storiesOf('Header', module).add('authorized', () => (
     userName="Leroy"
     email="leroycox@gmail.com"
     headerLinkOptions={headerLinkOptions}
-    renderLink={(classes: string, title: JSX.Element, menuItem: MenuItem) => (
-      <a href={getLinkUrl(menuItem)} className={classes}>
-        {title}
-      </a>
-    )}
+    renderLink={renderLink}
   />
 ));

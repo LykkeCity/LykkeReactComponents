@@ -11,8 +11,8 @@ import {UserMenu} from './UserMenu';
 import './style.css';
 
 export interface HeaderLinkOptions {
-  link: MenuItem;
-  isHidden: boolean;
+  title: MenuItem;
+  url: string;
 }
 
 export interface HeaderProps {
@@ -22,7 +22,7 @@ export interface HeaderProps {
   email?: string;
   onLogout: () => void;
   activeMenuItem?: MenuItem | string;
-  renderLink: (classes: string, title: JSX.Element, menuItem: MenuItem) => void;
+  renderLink: (classes: string, title: JSX.Element, url: string) => void;
   headerLinkOptions: HeaderLinkOptions[];
 }
 

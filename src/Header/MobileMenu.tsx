@@ -3,7 +3,7 @@ import React from 'react';
 import {AppLinks} from './AppLinks';
 import {GetStartedButton} from './GetStartedButton';
 import {HeaderLinkOptions} from './Header';
-import {MainMenu, MenuItem} from './MainMenu';
+import {MainMenu} from './MainMenu';
 import {SecondaryMenu} from './SecondaryMenu';
 import {UserAvatar} from './UserAvatar';
 
@@ -11,7 +11,7 @@ export interface MobileMenuProps {
   className?: string;
   userName?: string;
   onCloseClick: (e: React.MouseEvent<HTMLAnchorElement>) => void;
-  renderLink: (classes: string, title: JSX.Element, menuItem: MenuItem) => void;
+  renderLink: (classes: string, title: JSX.Element, url: string) => void;
   headerLinkOptions: HeaderLinkOptions[];
 }
 

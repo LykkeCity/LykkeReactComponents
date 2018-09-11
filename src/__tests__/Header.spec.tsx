@@ -3,40 +3,27 @@ import React from 'react';
 import {Header} from '../Header/Header';
 import {MenuItem} from '../Header/MainMenu';
 
-const headerLinkOptions = [
+export const headerLinkOptions = [
   {
-    isHidden: false,
-    link: MenuItem.Trade
+    title: MenuItem.Trade,
+    url: 'http://trade.lykke.com'
   },
   {
-    isHidden: false,
-    link: MenuItem.Funds
+    title: MenuItem.Funds,
+    url: 'http://wallet.lykke.com'
   },
   {
-    isHidden: true,
-    link: MenuItem.Profile
+    title: MenuItem.Profile,
+    url: '#'
   }
 ];
 
-const getLinkUrl = (menuItem: MenuItem) => {
-  switch (menuItem) {
-    case MenuItem.Trade: {
-      return 'http://trade.lykke.com';
-    }
-    case MenuItem.Funds: {
-      return 'http://wallet.lykke.com';
-    }
-    default:
-      return '';
-  }
-};
-
-const renderLink = (
+export const renderLink = (
   classes: string,
   title: JSX.Element,
-  menuItem: MenuItem
+  url: string
 ) => (
-  <a href={getLinkUrl(menuItem)} className={classes}>
+  <a href={url} className={classes}>
     {title}
   </a>
 );

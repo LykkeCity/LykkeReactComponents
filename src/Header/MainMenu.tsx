@@ -13,7 +13,7 @@ export enum MenuItem {
 export interface MainMenuProps {
   activeItem?: string;
   className?: string;
-  renderLink: (classes: string, title: JSX.Element, menuItem: MenuItem) => void;
+  renderLink: (classes: string, title: JSX.Element, url: string) => void;
   headerLinkOptions: HeaderLinkOptions[];
 }
 
@@ -28,24 +28,13 @@ export const MainMenu: React.SFC<MainMenuProps> = ({
     <div {...attributes} className={classnames('main-menu', className)}>
       {headerLinkOptions.map(option => {
         return renderLink(
-          classnames(`main-menu__item main-menu__item_${option.link}`, {
-            hidden: option.isHidden,
-            'main-menu__item_active': activeItem === option.link
+          classnames(`main-menu__item main-menu__item_${option.title}`, {
+            'main-menu__item_active': activeItem === option.title
           }),
-          <span className="main-menu__item-text">{option.link}</span>,
-          option.link
+          <span className="main-menu__item-text">{option.title}</span>,
+          option.url
         );
       })}
-      <a
-        href="#"
-        className={classnames(
-          'main-menu__item main-menu__item_profile',
-          {'main-menu__item_active': activeItem === MenuItem.Profile},
-          'hidden'
-        )}
-      >
-        <span className="main-menu__item-text">Profile</span>
-      </a>
       <Dropdown className="more-dropdown">
         <DropdownControl>
           <div className="main-menu__item main-menu__item_more hidden">
