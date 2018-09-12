@@ -1,6 +1,7 @@
 import {mount, shallow} from 'enzyme';
 import React from 'react';
 import {MobileMenu} from '../Header/MobileMenu';
+import {headerLinkOptions, renderLink} from './Header.spec';
 
 describe('<MobileMenu>', () => {
   it('should add custom class name', () => {
@@ -10,6 +11,8 @@ describe('<MobileMenu>', () => {
         className="foo-bar"
         userName="Foo Bar"
         onCloseClick={handleCloseClick}
+        headerLinkOptions={headerLinkOptions}
+        renderLink={renderLink}
       />
     );
     expect(wrapper.find('.foo-bar').hostNodes()).toHaveLength(1);
@@ -22,6 +25,8 @@ describe('<MobileMenu>', () => {
         className="foo-bar"
         userName="Foo Bar"
         onCloseClick={handleCloseClick}
+        headerLinkOptions={headerLinkOptions}
+        renderLink={renderLink}
       />
     );
     expect(wrapper.find('.user-avatar').text()).toBe('FB');
@@ -30,7 +35,12 @@ describe('<MobileMenu>', () => {
   it('should contain get started button if userName not provided', () => {
     const handleCloseClick = jest.fn();
     const wrapper = mount(
-      <MobileMenu className="foo-bar" onCloseClick={handleCloseClick} />
+      <MobileMenu
+        className="foo-bar"
+        onCloseClick={handleCloseClick}
+        renderLink={renderLink}
+        headerLinkOptions={headerLinkOptions}
+      />
     );
     expect(
       wrapper
@@ -47,6 +57,8 @@ describe('<MobileMenu>', () => {
         className="foo-bar"
         userName="Foo Bar"
         onCloseClick={handleCloseClick}
+        headerLinkOptions={headerLinkOptions}
+        renderLink={renderLink}
       />
     );
     wrapper.find('.mobile-menu__close-btn').simulate('click');
