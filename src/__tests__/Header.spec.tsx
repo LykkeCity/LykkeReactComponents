@@ -23,7 +23,7 @@ export const renderLink = (
   title: JSX.Element,
   url: string
 ) => (
-  <a href={url} className={classes}>
+  <a href={url} className={classes} key={url}>
     {title}
   </a>
 );
