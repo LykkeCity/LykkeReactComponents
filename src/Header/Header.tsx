@@ -24,6 +24,7 @@ export interface HeaderProps {
   activeMenuItem?: MenuItem | string;
   renderLink: (classes: string, title: JSX.Element, url: string) => void;
   headerLinkOptions: HeaderLinkOptions[];
+  getStartedUrl?: string;
 }
 
 export interface HeaderState {
@@ -49,6 +50,7 @@ export class Header extends React.Component<HeaderProps, HeaderState> {
       onLogout,
       renderLink,
       headerLinkOptions,
+      getStartedUrl,
       ...props
     } = this.props;
 
@@ -114,7 +116,10 @@ export class Header extends React.Component<HeaderProps, HeaderState> {
               </DropdownContainer>
             </Dropdown>
           ) : (
-            <GetStartedButton className="lykke-header__mobile-get-started" />
+            <GetStartedButton
+              className="lykke-header__mobile-get-started"
+              url={getStartedUrl}
+            />
           )}
         </div>
         <MobileMenu

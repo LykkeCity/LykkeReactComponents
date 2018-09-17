@@ -7,4 +7,9 @@ describe('<GetStartedButton>', () => {
     const wrapper = shallow(<GetStartedButton className="foo-bar" />);
     expect(wrapper.find('.foo-bar').hostNodes()).toHaveLength(1);
   });
+
+  it('should add custom href', () => {
+    const wrapper = shallow(<GetStartedButton url="foo-bar" />);
+    expect(wrapper.find('a').props().href).toBe('foo-bar');
+  });
 });

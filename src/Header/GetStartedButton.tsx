@@ -3,15 +3,17 @@ import React from 'react';
 
 export interface GetStartedButtonProps {
   className?: string;
+  url?: string;
 }
 
 export const GetStartedButton: React.SFC<GetStartedButtonProps> = ({
   className,
+  url = 'http://lykke.com/site/signin',
   ...attributes
 }) => {
   return (
     <div {...attributes} className={classnames('get-started-btn', className)}>
-      <a href="http://lykke.com/site/signin" className="btn btn-primary">
+      <a href={url} className="btn btn-primary">
         Get started
       </a>
     </div>
