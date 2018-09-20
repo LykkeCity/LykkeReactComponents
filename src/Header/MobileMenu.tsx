@@ -13,6 +13,8 @@ export interface MobileMenuProps {
   onCloseClick: (e: React.MouseEvent<HTMLAnchorElement>) => void;
   renderLink: (classes: string, title: JSX.Element, url: string) => void;
   headerLinkOptions: HeaderLinkOptions[];
+  secondaryMenuItems: HeaderLinkOptions[];
+  isSecondaryMenuShown: boolean;
 }
 
 export const MobileMenu: React.SFC<MobileMenuProps> = ({
@@ -21,6 +23,8 @@ export const MobileMenu: React.SFC<MobileMenuProps> = ({
   onCloseClick,
   renderLink,
   headerLinkOptions,
+  secondaryMenuItems,
+  isSecondaryMenuShown,
   ...attributes
 }) => {
   return (
@@ -44,8 +48,16 @@ export const MobileMenu: React.SFC<MobileMenuProps> = ({
         className="mobile-menu__main-menu"
         renderLink={renderLink}
         headerLinkOptions={headerLinkOptions}
+        secondaryMenuItems={secondaryMenuItems}
+        isSecondaryMenuShown={false}
       />
-      <SecondaryMenu className="mobile-menu__secondary-menu" />
+      {isSecondaryMenuShown && (
+        <SecondaryMenu
+          className="mobile-menu__secondary-menu"
+          renderLink={renderLink}
+          secondaryMenuItems={secondaryMenuItems}
+        />
+      )}
     </div>
   );
 };

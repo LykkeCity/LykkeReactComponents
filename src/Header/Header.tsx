@@ -1,7 +1,6 @@
 import classnames from 'classnames';
 import React from 'react';
 import {Dropdown, DropdownContainer, DropdownControl} from '../Dropdown';
-import {AppLinks} from './AppLinks';
 import {GetStartedButton} from './GetStartedButton';
 import {MainMenu, MenuItem} from './MainMenu';
 import {MobileMenu} from './MobileMenu';
@@ -11,6 +10,7 @@ import {UserMenu} from './UserMenu';
 import './style.css';
 
 export interface HeaderLinkOptions {
+  iconName?: string;
   title: MenuItem;
   url: string;
 }
@@ -25,6 +25,9 @@ export interface HeaderProps {
   renderLink: (classes: string, title: JSX.Element, url: string) => void;
   headerLinkOptions: HeaderLinkOptions[];
   getStartedUrl?: string;
+  secondaryMenuLinkOptions?: HeaderLinkOptions[];
+  isAuth: boolean;
+  isSecondaryMenuShown?: boolean;
 }
 
 export interface HeaderState {
@@ -51,6 +54,9 @@ export class Header extends React.Component<HeaderProps, HeaderState> {
       renderLink,
       headerLinkOptions,
       getStartedUrl,
+      secondaryMenuLinkOptions = [],
+      isAuth,
+      isSecondaryMenuShown = false,
       ...props
     } = this.props;
 
@@ -65,9 +71,10 @@ export class Header extends React.Component<HeaderProps, HeaderState> {
             activeItem={activeMenuItem}
             headerLinkOptions={headerLinkOptions}
             renderLink={renderLink}
+            secondaryMenuItems={secondaryMenuLinkOptions}
+            isSecondaryMenuShown={isSecondaryMenuShown}
           />
           <div className="lykke-header__actions">
-            <AppLinks className="lykke-header__app-links" />
             <div className="lykke-header__user-info">
               {userName ? (
                 <Dropdown className="lykke-header__user-dropdown">
@@ -102,19 +109,21 @@ export class Header extends React.Component<HeaderProps, HeaderState> {
           >
             {activeMenuItem}
           </a>
-          {userName ? (
-            <Dropdown className="lykke-header__user-dropdown">
-              <DropdownControl>
-                <UserAvatar userName={userName} />
-              </DropdownControl>
-              <DropdownContainer>
-                <UserMenu
-                  userName={userName}
-                  email={email}
-                  onLogout={onLogout}
-                />
-              </DropdownContainer>
-            </Dropdown>
+          {isAuth ? (
+            userName ? (
+              <Dropdown className="lykke-header__user-dropdown">
+                <DropdownControl>
+                  <UserAvatar userName={userName} />
+                </DropdownControl>
+                <DropdownContainer>
+                  <UserMenu
+                    userName={userName}
+                    email={email}
+                    onLogout={onLogout}
+                  />
+                </DropdownContainer>
+              </Dropdown>
+            ) : null
           ) : (
             <GetStartedButton
               className="lykke-header__mobile-get-started"
@@ -130,6 +139,8 @@ export class Header extends React.Component<HeaderProps, HeaderState> {
           })}
           headerLinkOptions={headerLinkOptions}
           renderLink={renderLink}
+          secondaryMenuItems={secondaryMenuLinkOptions}
+          isSecondaryMenuShown={isSecondaryMenuShown}
         />
       </Tag>
     );

@@ -1,33 +1,32 @@
 import classnames from 'classnames';
 import React from 'react';
 import {Social} from '../Social';
+import {AppLinks} from './AppLinks';
+import {HeaderLinkOptions} from './Header';
 
 export interface SecondaryMenuProps {
   className?: string;
+  renderLink: any;
+  secondaryMenuItems: HeaderLinkOptions[];
 }
 
 export const SecondaryMenu: React.SFC<SecondaryMenuProps> = ({
   className,
+  renderLink,
+  secondaryMenuItems,
   ...attributes
 }) => {
   return (
     <div {...attributes} className={classnames('secondary-menu', className)}>
-      <div className="secondary-menu__item secondary-menu__item_lykke-streams hidden">
-        <a href="#">Lykke Streams</a>
-      </div>
-      <div className="secondary-menu__item secondary-menu__item_blockchain-explorer hidden">
-        <a href="#">Blockchain Explorer</a>
-      </div>
-      <div className="secondary-menu__separator hidden" />
-      <div className="secondary-menu__item secondary-menu__item_no-image hidden">
-        <a href="#">Assets</a>
-      </div>
-      <div className="secondary-menu__item secondary-menu__item_no-image hidden">
-        <a href="#">API Keys</a>
-      </div>
-      <div className="secondary-menu__item secondary-menu__item_no-image hidden">
-        <a href="#">About Lykke</a>
-      </div>
+      {secondaryMenuItems.map((item: HeaderLinkOptions) =>
+        renderLink(
+          `secondary-menu__item secondary-menu__item_${item.iconName ||
+            'no-image'}`,
+          <span className="main-menu__item-text">{item.title}</span>,
+          item.url
+        )
+      )}
+      <AppLinks className="lykke-header__app-links" />
       <div className="secondary-menu__separator" />
       <div className="secondary-menu__footer">
         <Social theme="small" />
@@ -36,4 +35,5 @@ export const SecondaryMenu: React.SFC<SecondaryMenuProps> = ({
   );
 };
 
+SecondaryMenu.displayName = 'SecondaryMenu';
 export default SecondaryMenu;

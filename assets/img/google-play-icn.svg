@@ -27,7 +27,7 @@
         </linearGradient>
     </defs>
     <g fill="none" fill-rule="evenodd">
-        <rect width="30" height="30" fill="#333" rx="8"/>
+        <rect width="30" height="30" fill="#3e3e3e" rx="8"/>
         <g fill-rule="nonzero">
             <path fill="url(#a)" d="M.282.353C.071.564 0 .917 0 1.34v15.583c0 .423.141.776.353.987l.07.07 8.744-8.743v-.14L.282.352z" transform="translate(7.667 5.833)"/>
             <path fill="url(#b)" d="M11.987 12.199l-2.89-2.891v-.212l2.89-2.89.07.07 3.456 1.974c.987.564.987 1.48 0 2.045l-3.526 1.904z" transform="translate(7.667 5.833)"/>

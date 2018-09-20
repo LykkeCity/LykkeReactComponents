@@ -6,8 +6,13 @@ import {SecondaryMenu} from './SecondaryMenu';
 
 export enum MenuItem {
   Funds = 'funds',
-  Profile = 'profile',
-  Trade = 'trade'
+  Settings = 'settings',
+  Trade = 'trade',
+  LykkeStreams = 'lykke streams',
+  BlockchainExplorer = 'blockchain explorer',
+  Assets = 'assets',
+  ApiKeys = 'api keys',
+  FeesAndLimits = 'fees and limits'
 }
 
 export interface MainMenuProps {
@@ -15,6 +20,8 @@ export interface MainMenuProps {
   className?: string;
   renderLink: (classes: string, title: JSX.Element, url: string) => void;
   headerLinkOptions: HeaderLinkOptions[];
+  secondaryMenuItems: HeaderLinkOptions[];
+  isSecondaryMenuShown: boolean;
 }
 
 export const MainMenu: React.SFC<MainMenuProps> = ({
@@ -22,6 +29,8 @@ export const MainMenu: React.SFC<MainMenuProps> = ({
   className,
   renderLink,
   headerLinkOptions,
+  secondaryMenuItems,
+  isSecondaryMenuShown,
   ...attributes
 }) => {
   return (
@@ -35,20 +44,25 @@ export const MainMenu: React.SFC<MainMenuProps> = ({
           option.url
         );
       })}
-      <Dropdown className="more-dropdown">
-        <DropdownControl>
-          <div className="main-menu__item main-menu__item_more hidden">
-            <a href="#">
-              <span className="main-menu__item-text">More</span>
-            </a>
-          </div>
-        </DropdownControl>
-        <DropdownContainer>
-          <div className="more-dropdown">
-            <SecondaryMenu />
-          </div>
-        </DropdownContainer>
-      </Dropdown>
+      {isSecondaryMenuShown && (
+        <Dropdown className="more-dropdown">
+          <DropdownControl>
+            <div className="main-menu__item main-menu__item_more">
+              <a href="#">
+                <span className="main-menu__item-text">More</span>
+              </a>
+            </div>
+          </DropdownControl>
+          <DropdownContainer>
+            <div className="more-dropdown">
+              <SecondaryMenu
+                renderLink={renderLink}
+                secondaryMenuItems={secondaryMenuItems}
+              />
+            </div>
+          </DropdownContainer>
+        </Dropdown>
+      )}
     </div>
   );
 };

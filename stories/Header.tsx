@@ -14,13 +14,38 @@ const headerLinkOptions = [
     url: 'http://wallet.lykke.com'
   },
   {
-    title: MenuItem.Profile,
+    title: MenuItem.Settings,
+    url: '#'
+  }
+];
+
+const secondaryMenuItems = [
+  {
+    iconName: 'lykke-streams',
+    title: MenuItem.LykkeStreams,
+    url: '#'
+  },
+  {
+    iconName: 'blockchain-explorer',
+    title: MenuItem.BlockchainExplorer,
+    url: '#'
+  },
+  {
+    title: MenuItem.Assets,
+    url: '#'
+  },
+  {
+    title: MenuItem.ApiKeys,
+    url: '#'
+  },
+  {
+    title: MenuItem.AboutLykke,
     url: '#'
   }
 ];
 
 const renderLink = (classes: string, title: JSX.Element, url: string) => (
-  <a href={url} className={classes}>
+  <a href={url} className={classes} key={`${url}_${title.props.children}`}>
     {title}
   </a>
 );
@@ -32,6 +57,9 @@ storiesOf('Header', module).add('unauthorized', () => (
     activeMenuItem="trade"
     headerLinkOptions={headerLinkOptions}
     renderLink={renderLink}
+    secondaryMenuLinkOptions={secondaryMenuItems}
+    isAuth={false}
+    isSecondaryMenuShown={false}
   />
 ));
 
@@ -43,5 +71,8 @@ storiesOf('Header', module).add('authorized', () => (
     email="leroycox@gmail.com"
     headerLinkOptions={headerLinkOptions}
     renderLink={renderLink}
+    secondaryMenuLinkOptions={secondaryMenuItems}
+    isAuth={true}
+    isSecondaryMenuShown={true}
   />
 ));
