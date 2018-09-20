@@ -10,8 +10,6 @@ import {UserMenu} from './UserMenu';
 
 import './style.css';
 
-export const DEFAULT_URL = '#';
-
 export interface HeaderLinkOptions {
   iconName?: string;
   title: MenuItem;

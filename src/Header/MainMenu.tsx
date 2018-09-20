@@ -1,8 +1,10 @@
 import classnames from 'classnames';
 import React from 'react';
 import {Dropdown, DropdownContainer, DropdownControl} from '../Dropdown';
-import {DEFAULT_URL, HeaderLinkOptions} from './Header';
+import {HeaderLinkOptions} from './Header';
 import {SecondaryMenu} from './SecondaryMenu';
+
+const DEFAULT_URL = '#';
 
 export interface MainMenuProps {
   activeItem?: string;

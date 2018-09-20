@@ -2,7 +2,9 @@ import classnames from 'classnames';
 import React from 'react';
 import {Social} from '../Social';
 import {AppLinks} from './AppLinks';
-import {DEFAULT_URL, HeaderLinkOptions} from './Header';
+import {HeaderLinkOptions} from './Header';
+
+const DEFAULT_URL = '#';
 
 export interface SecondaryMenuProps {
   className?: string;
