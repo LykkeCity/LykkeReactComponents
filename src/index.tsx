@@ -19,7 +19,7 @@ import DropdownListItem from './Dropdown/DropdownListItem';
 import Error404 from './Error404';
 import Footer from './Footer';
 import Header from './Header/Header';
-import {MenuItem} from './Header/MainMenu';
+import {MenuItem} from './Header';
 import Icon from './Icon';
 import Input from './Input';
 import Link from './Link';

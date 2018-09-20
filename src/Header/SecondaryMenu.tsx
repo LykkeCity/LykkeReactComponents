@@ -2,7 +2,7 @@ import classnames from 'classnames';
 import React from 'react';
 import {Social} from '../Social';
 import {AppLinks} from './AppLinks';
-import {HeaderLinkOptions} from './Header';
+import {DEFAULT_URL, HeaderLinkOptions} from './Header';
 
 export interface SecondaryMenuProps {
   className?: string;
@@ -23,7 +23,7 @@ export const SecondaryMenu: React.SFC<SecondaryMenuProps> = ({
           `secondary-menu__item secondary-menu__item_${item.iconName ||
             'no-image'}`,
           <span className="main-menu__item-text">{item.title}</span>,
-          item.url
+          item.url || DEFAULT_URL
         )
       )}
       <AppLinks className="lykke-header__app-links" />

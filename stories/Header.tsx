@@ -2,7 +2,7 @@ import {action} from '@storybook/addon-actions';
 import {storiesOf} from '@storybook/react';
 import React from 'react';
 import {Header} from '../dist/';
-import {MenuItem} from '../dist/Header/MainMenu';
+import {MenuItem} from '../dist/Header';
 
 const headerLinkOptions = [
   {
@@ -14,33 +14,27 @@ const headerLinkOptions = [
     url: 'http://wallet.lykke.com'
   },
   {
-    title: MenuItem.Settings,
-    url: '#'
+    title: MenuItem.Settings
   }
 ];
 
 const secondaryMenuItems = [
   {
     iconName: 'lykke-streams',
-    title: MenuItem.LykkeStreams,
-    url: '#'
+    title: MenuItem.LykkeStreams
   },
   {
     iconName: 'blockchain-explorer',
-    title: MenuItem.BlockchainExplorer,
-    url: '#'
+    title: MenuItem.BlockchainExplorer
   },
   {
-    title: MenuItem.Assets,
-    url: '#'
+    title: MenuItem.Assets
   },
   {
-    title: MenuItem.ApiKeys,
-    url: '#'
+    title: MenuItem.ApiKeys
   },
   {
-    title: MenuItem.AboutLykke,
-    url: '#'
+    title: MenuItem.FeesAndLimits
   }
 ];
 

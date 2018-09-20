@@ -1,19 +1,8 @@
 import classnames from 'classnames';
 import React from 'react';
 import {Dropdown, DropdownContainer, DropdownControl} from '../Dropdown';
-import {HeaderLinkOptions} from './Header';
+import {DEFAULT_URL, HeaderLinkOptions} from './Header';
 import {SecondaryMenu} from './SecondaryMenu';
-
-export enum MenuItem {
-  Funds = 'funds',
-  Settings = 'settings',
-  Trade = 'trade',
-  LykkeStreams = 'lykke streams',
-  BlockchainExplorer = 'blockchain explorer',
-  Assets = 'assets',
-  ApiKeys = 'api keys',
-  FeesAndLimits = 'fees and limits'
-}
 
 export interface MainMenuProps {
   activeItem?: string;
@@ -41,7 +30,7 @@ export const MainMenu: React.SFC<MainMenuProps> = ({
             'main-menu__item_active': activeItem === option.title
           }),
           <span className="main-menu__item-text">{option.title}</span>,
-          option.url
+          option.url || DEFAULT_URL
         );
       })}
       {isSecondaryMenuShown && (
