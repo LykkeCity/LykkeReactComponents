@@ -2,6 +2,10 @@
 import React from 'react';
 import { MenuItem } from './MainMenu';
 import './style.css';
+export interface HeaderLinkOptions {
+    title: MenuItem;
+    url: string;
+}
 export interface HeaderProps {
     className?: string;
     tag?: string;
@@ -9,6 +13,9 @@ export interface HeaderProps {
     email?: string;
     onLogout: () => void;
     activeMenuItem?: MenuItem | string;
+    renderLink: (classes: string, title: JSX.Element, url: string) => void;
+    headerLinkOptions: HeaderLinkOptions[];
+    getStartedUrl?: string;
 }
 export interface HeaderState {
     isMobileMenuVisible?: boolean;

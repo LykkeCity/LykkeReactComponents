@@ -1,18 +1,21 @@
 import classnames from 'classnames';
 import React from 'react';
 import {Dropdown, DropdownContainer, DropdownControl} from '../Dropdown';
-import {AppLinks} from './AppLinks';
 import {GetStartedButton} from './GetStartedButton';
-import {MainMenu, MenuItem} from './MainMenu';
+import {MenuItem} from './index';
+import {MainMenu} from './MainMenu';
 import {MobileMenu} from './MobileMenu';
 import {UserAvatar} from './UserAvatar';
 import {UserMenu} from './UserMenu';
 
 import './style.css';
 
+export const DEFAULT_URL = '#';
+
 export interface HeaderLinkOptions {
+  iconName?: string;
   title: MenuItem;
-  url: string;
+  url?: string;
 }
 
 export interface HeaderProps {
@@ -25,6 +28,9 @@ export interface HeaderProps {
   renderLink: (classes: string, title: JSX.Element, url: string) => void;
   headerLinkOptions: HeaderLinkOptions[];
   getStartedUrl?: string;
+  secondaryMenuLinkOptions?: HeaderLinkOptions[];
+  isAuth: boolean;
+  isSecondaryMenuShown?: boolean;
 }
 
 export interface HeaderState {
@@ -45,12 +51,14 @@ export class Header extends React.Component<HeaderProps, HeaderState> {
       className,
       tag: Tag = 'div',
       userName,
-      email,
       activeMenuItem,
-      onLogout,
       renderLink,
       headerLinkOptions,
       getStartedUrl,
+      secondaryMenuLinkOptions = [],
+      isAuth,
+      isSecondaryMenuShown = false,
+      onLogout,
       ...props
     } = this.props;
 
@@ -65,24 +73,13 @@ export class Header extends React.Component<HeaderProps, HeaderState> {
             activeItem={activeMenuItem}
             headerLinkOptions={headerLinkOptions}
             renderLink={renderLink}
+            secondaryMenuItems={secondaryMenuLinkOptions}
+            isSecondaryMenuShown={isSecondaryMenuShown}
           />
           <div className="lykke-header__actions">
-            <AppLinks className="lykke-header__app-links" />
             <div className="lykke-header__user-info">
               {userName ? (
-                <Dropdown className="lykke-header__user-dropdown">
-                  <DropdownControl>
-                    <span className="lykke-header__user-name">{userName}</span>
-                    <UserAvatar userName={userName} />
-                  </DropdownControl>
-                  <DropdownContainer>
-                    <UserMenu
-                      userName={userName}
-                      email={email}
-                      onLogout={onLogout}
-                    />
-                  </DropdownContainer>
-                </Dropdown>
+                this.renderUserDropdown(false, onLogout)
               ) : (
                 <a
                   href="http://lykke.com/site/signin"
@@ -102,19 +99,10 @@ export class Header extends React.Component<HeaderProps, HeaderState> {
           >
             {activeMenuItem}
           </a>
-          {userName ? (
-            <Dropdown className="lykke-header__user-dropdown">
-              <DropdownControl>
-                <UserAvatar userName={userName} />
-              </DropdownControl>
-              <DropdownContainer>
-                <UserMenu
-                  userName={userName}
-                  email={email}
-                  onLogout={onLogout}
-                />
-              </DropdownContainer>
-            </Dropdown>
+          {isAuth ? (
+            userName ? (
+              this.renderUserDropdown(true, onLogout)
+            ) : null
           ) : (
             <GetStartedButton
               className="lykke-header__mobile-get-started"
@@ -130,10 +118,31 @@ export class Header extends React.Component<HeaderProps, HeaderState> {
           })}
           headerLinkOptions={headerLinkOptions}
           renderLink={renderLink}
+          secondaryMenuItems={secondaryMenuLinkOptions}
+          isSecondaryMenuShown={isSecondaryMenuShown}
         />
       </Tag>
     );
   }
+
+  renderUserDropdown = (isMobile: boolean, onLogout: () => void) => {
+    const {userName, email} = this.props;
+    return (
+      <Dropdown className="lykke-header__user-dropdown">
+        <DropdownControl>
+          {!isMobile ? (
+            <span className="lykke-header__user-name">{userName}</span>
+          ) : (
+            <React.Fragment />
+          )}
+          <UserAvatar userName={userName!} />
+        </DropdownControl>
+        <DropdownContainer>
+          <UserMenu userName={userName!} email={email} onLogout={onLogout} />
+        </DropdownContainer>
+      </Dropdown>
+    );
+  };
 
   private toggleMobileMenu = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();

@@ -1,7 +1,7 @@
 import {mount, shallow} from 'enzyme';
 import React from 'react';
 import {MobileMenu} from '../Header/MobileMenu';
-import {headerLinkOptions, renderLink} from './Header.spec';
+import {headerLinkOptions, renderLink, secondaryMenuItems} from './Header.spec';
 
 describe('<MobileMenu>', () => {
   it('should add custom class name', () => {
@@ -13,6 +13,7 @@ describe('<MobileMenu>', () => {
         onCloseClick={handleCloseClick}
         headerLinkOptions={headerLinkOptions}
         renderLink={renderLink}
+        secondaryMenuItems={secondaryMenuItems}
       />
     );
     expect(wrapper.find('.foo-bar').hostNodes()).toHaveLength(1);
@@ -27,6 +28,7 @@ describe('<MobileMenu>', () => {
         onCloseClick={handleCloseClick}
         headerLinkOptions={headerLinkOptions}
         renderLink={renderLink}
+        secondaryMenuItems={secondaryMenuItems}
       />
     );
     expect(wrapper.find('.user-avatar').text()).toBe('FB');
@@ -40,6 +42,7 @@ describe('<MobileMenu>', () => {
         onCloseClick={handleCloseClick}
         renderLink={renderLink}
         headerLinkOptions={headerLinkOptions}
+        secondaryMenuItems={secondaryMenuItems}
       />
     );
     expect(
@@ -59,6 +62,7 @@ describe('<MobileMenu>', () => {
         onCloseClick={handleCloseClick}
         headerLinkOptions={headerLinkOptions}
         renderLink={renderLink}
+        secondaryMenuItems={secondaryMenuItems}
       />
     );
     wrapper.find('.mobile-menu__close-btn').simulate('click');

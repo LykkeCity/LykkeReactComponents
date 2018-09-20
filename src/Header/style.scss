@@ -10,6 +10,7 @@
     background: url('../img/logo.svg');
     background-repeat: no-repeat;
     margin: 13px 0 15px 40px;
+    position: absolute;
 
     a {
       display: block;
@@ -45,7 +46,7 @@
         background-image: url('../img/pay-icn.svg');
       }
 
-      &_profile {
+      &_settings {
         background-image: url('../img/user-icn.svg');
       }
 
@@ -81,6 +82,8 @@
   &__main-menu {
     display: flex;
     margin: 10px 0;
+    width: 100%;
+    justify-content: center;
 
     .main-menu__item-text {
       @media all and (max-width: $screen-tablet) {
@@ -99,13 +102,16 @@
 
   .secondary-menu {
     &__item {
+      opacity: 0.6;
       background-repeat: no-repeat;
       background-size: 24px;
-      background-position: 16px 8px;
+      background-position: 8px 8px;
       padding: 8px 16px 8px 48px;
       border-radius: 8px;
-      height: 40px;
+      height: 36px;
+      line-height: 19px;
       cursor: pointer;
+      display: block;
 
       &_active,
       &:hover {
@@ -133,7 +139,7 @@
     }
 
     &__footer {
-      padding: 12px 12px 16px;
+      padding: 12px 12px 16px 8px;
 
       .social {
         li {
@@ -153,6 +159,8 @@
 
   &__actions {
     display: flex;
+    position: absolute;
+    right: 0;
   }
 
   .app-links {
@@ -160,12 +168,12 @@
 
     &__item {
       background-repeat: no-repeat;
-      margin: 15px 8px;
+      margin: 0px 8px;
 
       a {
         display: block;
         width: 24px;
-        height: 40px;
+        height: 30px;
       }
 
       &_appstore {
@@ -211,6 +219,7 @@
     display: inline-block;
     white-space: nowrap;
     overflow: hidden;
+    max-width: 200px;
 
     @media all and (max-width: $screen-tablet) {
       max-width: 100px;

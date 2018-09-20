@@ -1,7 +1,7 @@
 import {mount, shallow} from 'enzyme';
 import React from 'react';
 import {MainMenu} from '../Header/MainMenu';
-import {headerLinkOptions, renderLink} from './Header.spec';
+import {headerLinkOptions, renderLink, secondaryMenuItems} from './Header.spec';
 
 describe('<MainMenu>', () => {
   it('should add custom class name', () => {
@@ -10,6 +10,7 @@ describe('<MainMenu>', () => {
         className="foo-bar"
         renderLink={renderLink}
         headerLinkOptions={headerLinkOptions}
+        secondaryMenuItems={secondaryMenuItems}
       />
     );
     expect(wrapper.find('.foo-bar').hostNodes()).toHaveLength(1);
@@ -22,6 +23,7 @@ describe('<MainMenu>', () => {
         activeItem="funds"
         renderLink={renderLink}
         headerLinkOptions={headerLinkOptions}
+        secondaryMenuItems={secondaryMenuItems}
       />
     );
     expect(

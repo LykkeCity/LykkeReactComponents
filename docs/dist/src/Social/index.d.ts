@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import './icons.css';
 import './style.css';
 export interface SocialProps {

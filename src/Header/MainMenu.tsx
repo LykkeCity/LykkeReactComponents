@@ -1,20 +1,16 @@
 import classnames from 'classnames';
 import React from 'react';
 import {Dropdown, DropdownContainer, DropdownControl} from '../Dropdown';
-import {HeaderLinkOptions} from './Header';
+import {DEFAULT_URL, HeaderLinkOptions} from './Header';
 import {SecondaryMenu} from './SecondaryMenu';
-
-export enum MenuItem {
-  Funds = 'funds',
-  Profile = 'profile',
-  Trade = 'trade'
-}
 
 export interface MainMenuProps {
   activeItem?: string;
   className?: string;
   renderLink: (classes: string, title: JSX.Element, url: string) => void;
   headerLinkOptions: HeaderLinkOptions[];
+  secondaryMenuItems: HeaderLinkOptions[];
+  isSecondaryMenuShown: boolean;
 }
 
 export const MainMenu: React.SFC<MainMenuProps> = ({
@@ -22,6 +18,8 @@ export const MainMenu: React.SFC<MainMenuProps> = ({
   className,
   renderLink,
   headerLinkOptions,
+  secondaryMenuItems,
+  isSecondaryMenuShown,
   ...attributes
 }) => {
   return (
@@ -32,23 +30,28 @@ export const MainMenu: React.SFC<MainMenuProps> = ({
             'main-menu__item_active': activeItem === option.title
           }),
           <span className="main-menu__item-text">{option.title}</span>,
-          option.url
+          option.url || DEFAULT_URL
         );
       })}
-      <Dropdown className="more-dropdown">
-        <DropdownControl>
-          <div className="main-menu__item main-menu__item_more hidden">
-            <a href="#">
-              <span className="main-menu__item-text">More</span>
-            </a>
-          </div>
-        </DropdownControl>
-        <DropdownContainer>
-          <div className="more-dropdown">
-            <SecondaryMenu />
-          </div>
-        </DropdownContainer>
-      </Dropdown>
+      {isSecondaryMenuShown && (
+        <Dropdown className="more-dropdown">
+          <DropdownControl>
+            <div className="main-menu__item main-menu__item_more">
+              <a href="#">
+                <span className="main-menu__item-text">More</span>
+              </a>
+            </div>
+          </DropdownControl>
+          <DropdownContainer>
+            <div className="more-dropdown">
+              <SecondaryMenu
+                renderLink={renderLink}
+                secondaryMenuItems={secondaryMenuItems}
+              />
+            </div>
+          </DropdownContainer>
+        </Dropdown>
+      )}
     </div>
   );
 };
