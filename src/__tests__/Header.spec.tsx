@@ -1,7 +1,7 @@
 import {mount, shallow} from 'enzyme';
 import React from 'react';
-import {Header} from '../Header/Header';
 import {MenuItem} from '../Header/';
+import {Header} from '../Header/Header';
 
 export const headerLinkOptions = [
   {
@@ -19,11 +19,9 @@ export const headerLinkOptions = [
 
 export const secondaryMenuItems = [
   {
-    iconName: 'lykke-streams',
     title: MenuItem.LykkeStreams
   },
   {
-    iconName: 'blockchain-explorer',
     title: MenuItem.BlockchainExplorer
   },
   {

@@ -20,11 +20,9 @@ const headerLinkOptions = [
 
 const secondaryMenuItems = [
   {
-    iconName: 'lykke-streams',
     title: MenuItem.LykkeStreams
   },
   {
-    iconName: 'blockchain-explorer',
     title: MenuItem.BlockchainExplorer
   },
   {
