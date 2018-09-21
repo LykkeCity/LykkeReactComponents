@@ -131,7 +131,7 @@ export class Header extends React.Component<HeaderProps, HeaderState> {
           {!isMobile ? (
             <span className="lykke-header__user-name">{userName}</span>
           ) : (
-            <React.Fragment />
+            <span />
           )}
           <UserAvatar userName={userName!} />
         </DropdownControl>
