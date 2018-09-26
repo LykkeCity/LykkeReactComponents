@@ -79,10 +79,7 @@ export class Header extends React.Component<HeaderProps, HeaderState> {
               {userName ? (
                 this.renderUserDropdown(false, onLogout)
               ) : (
-                <a
-                  href="http://lykke.com/site/signin"
-                  className="btn btn-primary"
-                >
+                <a href={this.getLoginUrl()} className="btn btn-primary">
                   Get started
                 </a>
               )}
@@ -104,7 +101,7 @@ export class Header extends React.Component<HeaderProps, HeaderState> {
           ) : (
             <GetStartedButton
               className="lykke-header__mobile-get-started"
-              url={getStartedUrl}
+              url={this.getLoginUrl()}
             />
           )}
         </div>
@@ -141,6 +138,9 @@ export class Header extends React.Component<HeaderProps, HeaderState> {
       </Dropdown>
     );
   };
+
+  private getLoginUrl = () =>
+    this.props.getStartedUrl || 'http://lykke.com/site/signin';
 
   private toggleMobileMenu = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();

@@ -8,7 +8,7 @@ export interface GetStartedButtonProps {
 
 export const GetStartedButton: React.SFC<GetStartedButtonProps> = ({
   className,
-  url = 'http://lykke.com/site/signin',
+  url,
   ...attributes
 }) => {
   return (
