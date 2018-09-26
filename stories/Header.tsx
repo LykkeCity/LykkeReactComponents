@@ -66,5 +66,6 @@ storiesOf('Header', module).add('authorized', () => (
     secondaryMenuLinkOptions={secondaryMenuItems}
     isAuth={true}
     isSecondaryMenuShown={true}
+    isBeta={true}
   />
 ));

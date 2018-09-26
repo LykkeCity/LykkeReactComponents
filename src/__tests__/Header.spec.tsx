@@ -56,6 +56,7 @@ describe('<Header>', () => {
         headerLinkOptions={headerLinkOptions}
         isAuth={true}
         isSecondaryMenuShown={false}
+        isBeta={true}
       />
     );
     expect(wrapper.find('header').hostNodes()).toHaveLength(1);
@@ -72,6 +73,7 @@ describe('<Header>', () => {
         secondaryMenuLinkOptions={secondaryMenuItems}
         isAuth={true}
         isSecondaryMenuShown={false}
+        isBeta={false}
       />
     );
     expect(wrapper.find('.foo-bar').hostNodes()).toHaveLength(1);

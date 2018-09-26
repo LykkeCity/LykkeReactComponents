@@ -29,6 +29,7 @@ export interface HeaderProps {
   secondaryMenuLinkOptions?: HeaderLinkOptions[];
   isAuth: boolean;
   isSecondaryMenuShown?: boolean;
+  isBeta?: boolean;
 }
 
 export interface HeaderState {
@@ -52,19 +53,26 @@ export class Header extends React.Component<HeaderProps, HeaderState> {
       activeMenuItem,
       renderLink,
       headerLinkOptions,
-      getStartedUrl,
       secondaryMenuLinkOptions = [],
       isAuth,
       isSecondaryMenuShown = false,
       onLogout,
+      isBeta = false,
       ...props
     } = this.props;
 
     return (
       <Tag {...props} className={classnames('lykke-header', className)}>
         <div className="lykke-header__desktop-row">
-          <div className="logo">
-            <a href="/" />
+          <div className="lykke-header__logo">
+            <div className="logo">
+              <a href="/" />
+            </div>
+            {isBeta && (
+              <div className="beta">
+                <div>beta</div>
+              </div>
+            )}
           </div>
           <MainMenu
             className="lykke-header__main-menu"

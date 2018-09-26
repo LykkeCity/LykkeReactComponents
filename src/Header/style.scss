@@ -6,16 +6,38 @@
   height: 60px;
   width: 100%;
 
-  .logo {
-    background: url('../img/logo.svg');
-    background-repeat: no-repeat;
-    margin: 13px 0 15px 40px;
+  &__logo {
     position: absolute;
+    display: flex;
 
-    a {
-      display: block;
-      width: 107px;
-      height: 32px;
+    .logo {
+      margin: 13px 0 15px 40px;
+      background: url('../img/logo.svg');
+      background-repeat: no-repeat;
+
+      a {
+        display: block;
+        width: 107px;
+        height: 32px;
+      }
+    }
+
+    .beta {
+      margin-left: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      div {
+        background-color: rgba(#fff, 0.15);
+        border-radius: 4px;
+        padding: 6px 10px 4px;
+        color: $white;
+        font-size: 13px;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
     }
   }
 
