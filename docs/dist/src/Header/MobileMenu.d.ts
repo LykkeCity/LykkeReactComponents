@@ -7,6 +7,8 @@ export interface MobileMenuProps {
     onCloseClick: (e: React.MouseEvent<HTMLAnchorElement>) => void;
     renderLink: (classes: string, title: JSX.Element, url: string) => void;
     headerLinkOptions: HeaderLinkOptions[];
+    secondaryMenuItems: HeaderLinkOptions[];
+    isSecondaryMenuShown: boolean;
 }
 export declare const MobileMenu: React.SFC<MobileMenuProps>;
 export default MobileMenu;
