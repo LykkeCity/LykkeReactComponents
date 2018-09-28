@@ -24,7 +24,7 @@ export const SecondaryMenu: React.SFC<SecondaryMenuProps> = ({
         renderLink(
           `secondary-menu__item secondary-menu__item_${item.iconName ||
             'no-image'}`,
-          <span className="main-menu__item-text">{item.title}</span>,
+          <span className="secondary-menu__item-text">{item.title}</span>,
           item.url || DEFAULT_URL
         )
       )}
