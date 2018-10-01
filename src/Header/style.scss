@@ -136,6 +136,7 @@
 
       &_active,
       &:hover {
+        opacity: 1;
         background-color: rgba(#fff, 0.15);
       }
 
@@ -322,13 +323,18 @@
     }
   }
 
-  a {
+  a,
+  .more-button {
     color: #fff;
     font-size: 13px;
     font-weight: $fw-semi;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     text-decoration: none;
+  }
+
+  .more-button {
+    display: block;
   }
 
   &__mobile-row {

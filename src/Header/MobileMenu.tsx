@@ -59,6 +59,7 @@ export const MobileMenu: React.SFC<MobileMenuProps> = ({
           className="mobile-menu__secondary-menu"
           renderLink={renderLink}
           secondaryMenuItems={secondaryMenuItems}
+          activeItem={activeItem}
         />
       )}
     </div>

@@ -8,9 +8,10 @@ const DEFAULT_URL = '#';
 
 export interface SecondaryMenuProps {
   className?: string;
-  renderLink: any;
+  renderLink: (classes: string, title: JSX.Element, url: string) => void;
   secondaryMenuItems: HeaderLinkOptions[];
   activeItem?: string;
+  handleItemClick?: any;
 }
 
 export const SecondaryMenu: React.SFC<SecondaryMenuProps> = ({
@@ -18,6 +19,7 @@ export const SecondaryMenu: React.SFC<SecondaryMenuProps> = ({
   renderLink,
   secondaryMenuItems,
   activeItem,
+  handleItemClick,
   ...attributes
 }) => {
   return (
@@ -28,7 +30,8 @@ export const SecondaryMenu: React.SFC<SecondaryMenuProps> = ({
             `secondary-menu__item secondary-menu__item_${item.iconName ||
               'no-image'}`,
             {
-              'secondary-menu__item_active': activeItem === item.title
+              'secondary-menu__item_active':
+                (activeItem && activeItem.toLowerCase()) === item.title
             }
           ),
           <span className="secondary-menu__item-text">{item.title}</span>,

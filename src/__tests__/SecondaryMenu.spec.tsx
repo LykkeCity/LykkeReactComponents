@@ -10,6 +10,7 @@ describe('<SecondaryMenu>', () => {
         className="foo-bar"
         renderLink={renderLink}
         secondaryMenuItems={secondaryMenuItems}
+        activeItem={'api keys'}
       />
     );
     expect(wrapper.find('.foo-bar').hostNodes()).toHaveLength(1);
