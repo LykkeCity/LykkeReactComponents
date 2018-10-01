@@ -123,6 +123,7 @@ export class Header extends React.Component<HeaderProps, HeaderState> {
           renderLink={renderLink}
           secondaryMenuItems={secondaryMenuLinkOptions}
           isSecondaryMenuShown={isSecondaryMenuShown}
+          activeItem={activeMenuItem}
         />
       </Tag>
     );

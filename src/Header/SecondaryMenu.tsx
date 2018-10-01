@@ -10,20 +10,27 @@ export interface SecondaryMenuProps {
   className?: string;
   renderLink: any;
   secondaryMenuItems: HeaderLinkOptions[];
+  activeItem?: string;
 }
 
 export const SecondaryMenu: React.SFC<SecondaryMenuProps> = ({
   className,
   renderLink,
   secondaryMenuItems,
+  activeItem,
   ...attributes
 }) => {
   return (
     <div {...attributes} className={classnames('secondary-menu', className)}>
       {secondaryMenuItems.map((item: HeaderLinkOptions) =>
         renderLink(
-          `secondary-menu__item secondary-menu__item_${item.iconName ||
-            'no-image'}`,
+          classnames(
+            `secondary-menu__item secondary-menu__item_${item.iconName ||
+              'no-image'}`,
+            {
+              'secondary-menu__item_active': activeItem === item.title
+            }
+          ),
           <span className="secondary-menu__item-text">{item.title}</span>,
           item.url || DEFAULT_URL
         )

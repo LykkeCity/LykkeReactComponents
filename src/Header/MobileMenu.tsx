@@ -15,6 +15,7 @@ export interface MobileMenuProps {
   headerLinkOptions: HeaderLinkOptions[];
   secondaryMenuItems: HeaderLinkOptions[];
   isSecondaryMenuShown: boolean;
+  activeItem?: string;
 }
 
 export const MobileMenu: React.SFC<MobileMenuProps> = ({
@@ -25,6 +26,7 @@ export const MobileMenu: React.SFC<MobileMenuProps> = ({
   headerLinkOptions,
   secondaryMenuItems,
   isSecondaryMenuShown,
+  activeItem,
   ...attributes
 }) => {
   return (
@@ -50,6 +52,7 @@ export const MobileMenu: React.SFC<MobileMenuProps> = ({
         headerLinkOptions={headerLinkOptions}
         secondaryMenuItems={secondaryMenuItems}
         isSecondaryMenuShown={false}
+        activeItem={activeItem}
       />
       {isSecondaryMenuShown && (
         <SecondaryMenu

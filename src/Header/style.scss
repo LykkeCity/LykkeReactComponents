@@ -404,6 +404,14 @@
 
     .app-links__item {
       margin-bottom: 4px;
+
+      &_appstore {
+        background-image: url('../img/apple-icn-mobile.svg');
+      }
+
+      &_googleplay {
+        background-image: url('../img/google-play-icn-mobile.svg');
+      }
     }
 
     .user-avatar {
