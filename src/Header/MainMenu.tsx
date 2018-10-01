@@ -39,9 +39,9 @@ export const MainMenu: React.SFC<MainMenuProps> = ({
         <Dropdown className="more-dropdown">
           <DropdownControl>
             <div className="main-menu__item main-menu__item_more">
-              <a href="#">
+              <span className="more-button">
                 <span className="main-menu__item-text">More</span>
-              </a>
+              </span>
             </div>
           </DropdownControl>
           <DropdownContainer>
@@ -49,6 +49,7 @@ export const MainMenu: React.SFC<MainMenuProps> = ({
               <SecondaryMenu
                 renderLink={renderLink}
                 secondaryMenuItems={secondaryMenuItems}
+                activeItem={activeItem}
               />
             </div>
           </DropdownContainer>

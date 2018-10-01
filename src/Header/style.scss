@@ -136,6 +136,7 @@
 
       &_active,
       &:hover {
+        opacity: 1;
         background-color: rgba(#fff, 0.15);
       }
 
@@ -322,13 +323,18 @@
     }
   }
 
-  a {
+  a,
+  .more-button {
     color: #fff;
     font-size: 13px;
     font-weight: $fw-semi;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     text-decoration: none;
+  }
+
+  .more-button {
+    display: block;
   }
 
   &__mobile-row {
@@ -404,6 +410,14 @@
 
     .app-links__item {
       margin-bottom: 4px;
+
+      &_appstore {
+        background-image: url('../img/apple-icn-mobile.svg');
+      }
+
+      &_googleplay {
+        background-image: url('../img/google-play-icn-mobile.svg');
+      }
     }
 
     .user-avatar {
