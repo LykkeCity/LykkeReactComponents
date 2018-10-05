@@ -142,4 +142,27 @@ describe('<Header>', () => {
     );
     expect(wrapper.find('SecondaryMenu')).toHaveLength(0);
   });
+
+  it('should close mobile menu after menu item click', () => {
+    const handleLogout = jest.fn();
+    const wrapper = mount(
+      <Header
+        userName="Foo Bar"
+        onLogout={handleLogout}
+        renderLink={renderLink}
+        headerLinkOptions={headerLinkOptions}
+        secondaryMenuLinkOptions={secondaryMenuItems}
+        isAuth={false}
+        isSecondaryMenuShown={true}
+      />
+    );
+    expect(wrapper.state('isMobileMenuVisible')).toBeFalsy();
+    wrapper.find('.open-mobile-menu-btn').simulate('click');
+    expect(wrapper.state('isMobileMenuVisible')).toBeTruthy();
+    wrapper
+      .find('.mobile-menu__main-menu .main-menu__item')
+      .first()
+      .simulate('click');
+    expect(wrapper.state('isMobileMenuVisible')).toBeFalsy();
+  });
 });

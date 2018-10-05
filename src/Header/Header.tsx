@@ -114,7 +114,7 @@ export class Header extends React.Component<HeaderProps, HeaderState> {
           )}
         </div>
         <MobileMenu
-          onCloseClick={this.toggleMobileMenu}
+          onCloseClick={this.closeMobileMenu}
           userName={userName}
           className={classnames('lykke-header__mobile-menu', {
             'lykke-header__mobile-menu_active': this.state.isMobileMenuVisible
@@ -156,6 +156,12 @@ export class Header extends React.Component<HeaderProps, HeaderState> {
     this.setState(prevState => ({
       isMobileMenuVisible: !prevState.isMobileMenuVisible
     }));
+  };
+
+  private closeMobileMenu = () => {
+    this.setState({
+      isMobileMenuVisible: false
+    });
   };
 }
 

@@ -31,5 +31,6 @@ export declare class Header extends React.Component<HeaderProps, HeaderState> {
     renderUserDropdown: (isMobile: boolean, onLogout: () => void) => JSX.Element;
     private getLoginUrl;
     private toggleMobileMenu;
+    private closeMobileMenu;
 }
 export default Header;
