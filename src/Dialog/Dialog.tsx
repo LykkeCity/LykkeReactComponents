@@ -1,6 +1,7 @@
 import classnames from 'classnames';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Checkbox} from '../Checkbox';
 import {ClickOutside} from '../ClickOutside';
 import './style.css';
 
@@ -15,6 +16,8 @@ export interface DialogProps {
   cancelButton?: {text: string};
   title?: string | JSX.Element;
   description?: string | JSX.Element;
+  shouldAccept?: boolean;
+  theme?: string;
   actions?: Array<{
     text: string;
     cssClass?: string;
@@ -23,6 +26,7 @@ export interface DialogProps {
 }
 
 export interface DialogState {
+  accepted?: boolean;
   visible?: boolean;
 }
 
@@ -31,6 +35,7 @@ export class Dialog extends React.Component<DialogProps, DialogState> {
     super(props);
 
     this.state = {
+      accepted: false,
       visible: props.visible
     };
   }
@@ -50,6 +55,12 @@ export class Dialog extends React.Component<DialogProps, DialogState> {
     }
   };
 
+  handleToggleAccept = () => {
+    this.setState(prevState => ({
+      accepted: !prevState.accepted
+    }));
+  };
+
   handleCancel = () => {
     /* istanbul ignore else */
     if (this.props.onCancel) {
@@ -59,7 +70,10 @@ export class Dialog extends React.Component<DialogProps, DialogState> {
 
   handleConfirm = () => {
     /* istanbul ignore else */
-    if (this.props.onConfirm) {
+    if (
+      this.props.onConfirm &&
+      (!this.props.shouldAccept || this.state.accepted)
+    ) {
       this.props.onConfirm();
     }
   };
@@ -75,6 +89,8 @@ export class Dialog extends React.Component<DialogProps, DialogState> {
       cancelButton = {text: 'Cancel'},
       title,
       description,
+      shouldAccept,
+      theme = '',
       actions,
       closeable,
       ...props
@@ -83,7 +99,7 @@ export class Dialog extends React.Component<DialogProps, DialogState> {
     return ReactDOM.createPortal(
       <Tag
         {...props}
-        className={classnames('modal fade', {in: visible}, className)}
+        className={classnames('modal fade', {in: visible}, className, theme)}
         tabIndex="-1"
         role="dialog"
       >
@@ -93,7 +109,18 @@ export class Dialog extends React.Component<DialogProps, DialogState> {
               <ClickOutside onClickOutside={this.handleClickOutside}>
                 <div className="modal__body">
                   <div className="modal__title">{title}</div>
-                  <div className="modal__description">{description}</div>
+                  <div className="modal__description">
+                    {description}
+                    {shouldAccept && (
+                      <div>
+                        <Checkbox
+                          checked={false}
+                          label="I hereby accept these terms and regulations"
+                          onToggle={this.handleToggleAccept}
+                        />
+                      </div>
+                    )}
+                  </div>
                   <div className="modal__actions">
                     {actions ? (
                       actions.map(action => (
@@ -108,21 +135,28 @@ export class Dialog extends React.Component<DialogProps, DialogState> {
                       ))
                     ) : (
                       <div>
-                        {cancelButton.text && (
-                          <button
-                            type="button"
-                            className="btn btn--primary btn-block"
-                            onClick={this.handleCancel}
-                          >
-                            {cancelButton.text}
-                          </button>
-                        )}
                         {confirmButton.text && (
                           <button
-                            className="btn btn--flat btn-block"
+                            type="button"
+                            className={classnames(
+                              'btn btn--primary btn-block',
+                              {
+                                disabled:
+                                  this.props.shouldAccept &&
+                                  !this.state.accepted
+                              }
+                            )}
                             onClick={this.handleConfirm}
                           >
                             {confirmButton.text}
+                          </button>
+                        )}
+                        {cancelButton.text && (
+                          <button
+                            className="btn btn--flat btn-block"
+                            onClick={this.handleCancel}
+                          >
+                            {cancelButton.text}
                           </button>
                         )}
                       </div>

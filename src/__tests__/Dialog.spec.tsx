@@ -58,21 +58,21 @@ test('Dialog should not handle click outside handle if dialog is not closeable',
   expect(onCancel).not.toHaveBeenCalled();
 });
 
-test('Dialog should handle confirmButton.text property', () => {
+test('Dialog should handle cancelButton.text property', () => {
   let dialog = mount(<Dialog />);
-  expect(dialog.find('.modal__actions .btn--flat').text()).toBe('Confirm');
-  dialog = mount(<Dialog confirmButton={{text: 'foo'}} />);
+  expect(dialog.find('.modal__actions .btn--flat').text()).toBe('Cancel');
+  dialog = mount(<Dialog cancelButton={{text: 'foo'}} />);
   expect(dialog.find('.modal__actions .btn--flat').text()).toBe('foo');
-  dialog = mount(<Dialog confirmButton={{text: ''}} />);
+  dialog = mount(<Dialog cancelButton={{text: ''}} />);
   expect(dialog.find('.modal__actions .btn--flat').length).toBe(0);
 });
 
-test('Dialog should handle cancelButton.text property', () => {
+test('Dialog should handle confirmButton.text property', () => {
   let dialog = mount(<Dialog />);
-  expect(dialog.find('.modal__actions .btn--primary').text()).toBe('Cancel');
-  dialog = mount(<Dialog cancelButton={{text: 'foo'}} />);
+  expect(dialog.find('.modal__actions .btn--primary').text()).toBe('Confirm');
+  dialog = mount(<Dialog confirmButton={{text: 'foo'}} />);
   expect(dialog.find('.modal__actions .btn--primary').text()).toBe('foo');
-  dialog = mount(<Dialog cancelButton={{text: ''}} />);
+  dialog = mount(<Dialog confirmButton={{text: ''}} />);
   expect(dialog.find('.modal__actions .btn--primary').length).toBe(0);
 });
 
@@ -85,16 +85,16 @@ test('Dialog should call onCancel and onConfirm handlers', () => {
   expect(handleCancel).not.toBeCalled();
   expect(handleConfirm).not.toBeCalled();
   dialog.find('.modal__actions .btn--flat').simulate('click');
-  expect(handleConfirm).toBeCalled();
-  dialog.find('.modal__actions .btn--primary').simulate('click');
   expect(handleCancel).toBeCalled();
+  dialog.find('.modal__actions .btn--primary').simulate('click');
+  expect(handleConfirm).toBeCalled();
 });
 
 test('Dialog should handle actions property', () => {
   const handleClick = jest.fn();
   const handleClick2 = jest.fn();
   let dialog = mount(<Dialog />);
-  expect(dialog.find('.modal__actions .btn--primary').text()).toBe('Cancel');
+  expect(dialog.find('.modal__actions .btn--primary').text()).toBe('Confirm');
   dialog = mount(<Dialog actions={[{text: 'foo', onClick: handleClick}]} />);
   expect(dialog.find('.modal__actions .btn--primary').length).toBe(0);
   expect(dialog.find('.modal__actions .btn').length).toBe(1);

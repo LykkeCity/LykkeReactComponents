@@ -78,3 +78,54 @@ storiesOf('Dialog', module).add(
     </div>
   ))
 );
+
+storiesOf('Dialog', module).add(
+  'checkbox',
+  withInfo('')(() => (
+    <div
+      style={{
+        backgroundColor: '#cfd2d7',
+        height: '100%',
+        position: 'fixed',
+        width: '100%'
+      }}
+    >
+      <Dialog
+        cancelButton={{text: 'Action 1'}}
+        confirmButton={{text: 'Action 2'}}
+        onCancel={action('action1')}
+        onConfirm={action('action2')}
+        visible
+        shouldAccept
+        title="Title"
+        description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+      />
+    </div>
+  ))
+);
+
+storiesOf('Dialog', module).add(
+  'dark theme',
+  withInfo('')(() => (
+    <div
+      style={{
+        backgroundColor: '#333',
+        height: '100%',
+        position: 'fixed',
+        width: '100%'
+      }}
+    >
+      <Dialog
+        cancelButton={{text: 'Action 1'}}
+        confirmButton={{text: 'Action 2'}}
+        onCancel={action('action1')}
+        onConfirm={action('action2')}
+        visible
+        theme="dark"
+        shouldAccept
+        title="Title"
+        description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+      />
+    </div>
+  ))
+);

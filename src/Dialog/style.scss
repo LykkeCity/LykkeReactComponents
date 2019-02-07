@@ -18,6 +18,10 @@
     }
   }
 
+  &.has-scroll {
+    max-height: 255px;
+  }
+
   &__dialog {
     display: table;
     width: 100%;
@@ -59,8 +63,13 @@
     color: $secondary;
     line-height: 1.67;
     margin-bottom: 29px;
+    overflow-y: auto;
 
     @include rem(font-size, 18px);
+
+    .checkbox-container {
+      margin-top: 30px;
+    }
   }
 
   &__actions {
@@ -74,6 +83,24 @@
       + .btn {
         margin-top: 11px;
       }
+    }
+  }
+
+  &.dark {
+    .modal__content {
+      background: #3c3c3c;
+    }
+
+    .modal__title,
+    .modal__description,
+    .btn-block,
+    .checkbox-container {
+      color: #f5f6f7 !important;
+    }
+
+    a {
+      color: #0388ef;
+      text-decoration: none;
     }
   }
 

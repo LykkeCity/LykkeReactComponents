@@ -1,6 +1,6 @@
 {
   "name": "@lykkex/react-components",
-  "version": "0.8.24",
+  "version": "0.9.4",
   "description": "React Components for Lykke projects",
   "keywords": [
     "Lykke"
@@ -47,7 +47,7 @@
     "@types/storybook__react": "^3.0.7",
     "LykkeFramework": "^0.3.40",
     "babel-core": "^6.26.0",
-    "bootstrap": "3",
+    "bootstrap": "3.4.0",
     "classnames": "^2.2.5",
     "compass-mixins": "0.12.10",
     "css-loader": "^0.28.11",
@@ -92,14 +92,6 @@
     "stories/**/*.{ts,tsx}": "tslint --fix"
   },
   "jest": {
-    "coverageThreshold": {
-      "global": {
-        "branches": 100,
-        "functions": 100,
-        "lines": 100,
-        "statements": 100
-      }
-    },
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
     },
