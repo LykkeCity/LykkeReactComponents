@@ -13,7 +13,7 @@ export const headerLinkOptions = [
     url: 'http://wallet.lykke.com'
   },
   {
-    title: MenuItem.Settings
+    title: MenuItem.Profile
   }
 ];
 

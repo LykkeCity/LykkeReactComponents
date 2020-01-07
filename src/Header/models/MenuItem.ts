@@ -1,6 +1,7 @@
 enum MenuItem {
   Funds = 'funds',
   Settings = 'settings',
+  Profile = 'profile',
   Trade = 'trade',
   LykkeStreams = 'lykke streams',
   BlockchainExplorer = 'blockchain explorer',
