@@ -19,7 +19,10 @@
   }
 
   &.has-scroll {
-    max-height: 255px;
+    .modal__description {
+      max-height: 255px !important;
+      overflow-y: auto !important;
+    }
   }
 
   &__dialog {

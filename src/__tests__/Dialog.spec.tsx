@@ -33,6 +33,13 @@ test('Dialog should handle title property', () => {
   expect(dialog.find('.modal__title').text()).toBe('foo');
 });
 
+test('Dialog should render with scroll', () => {
+  const dialog = mount(<Dialog hasScroll description="Test" />);
+  expect(dialog.find('.has-scroll').find('.modal__description')).toHaveLength(
+    1
+  );
+});
+
 test('Dialog should handle description property', () => {
   let dialog = mount(<Dialog />);
   expect(dialog.find('.modal__description').text()).toBe('');

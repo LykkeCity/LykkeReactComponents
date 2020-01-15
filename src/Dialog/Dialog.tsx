@@ -12,6 +12,7 @@ export interface DialogProps {
   onConfirm?: () => void;
   visible?: boolean;
   closeable?: boolean;
+  hasScroll?: boolean;
   confirmButton?: {text: string};
   cancelButton?: {text: string};
   title?: string | JSX.Element;
@@ -93,13 +94,19 @@ export class Dialog extends React.Component<DialogProps, DialogState> {
       theme = '',
       actions,
       closeable,
+      hasScroll,
       ...props
     } = this.props;
 
     return ReactDOM.createPortal(
       <Tag
         {...props}
-        className={classnames('modal fade', {in: visible}, className, theme)}
+        className={classnames(
+          'modal fade',
+          {in: visible, 'has-scroll': hasScroll},
+          className,
+          theme
+        )}
         tabIndex="-1"
         role="dialog"
       >

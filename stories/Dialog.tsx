@@ -17,6 +17,7 @@ storiesOf('Dialog', module).add(
       onConfirm?: () => void;
       visible?: boolean;
       closeable?: boolean;
+      hasScroll?: boolean;
       confirmButton?: {text: string};
       cancelButton?: {text: string};
       title?: string | JSX.Element;
