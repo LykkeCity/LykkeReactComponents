@@ -285,6 +285,19 @@
   dependencies:
     "@types/react" "*"
 
+"@types/storybook__react@^3.0.9":
+  version "3.0.9"
+  resolved "https://registry.yarnpkg.com/@types/storybook__react/-/storybook__react-3.0.9.tgz#aac193f0c037ddfc2342bd027d720553ac089a56"
+  integrity sha512-uhQMkyS/WZIKn8z222D8WJbWy7aXYaqazsrLKdpRLsHBz2YaAVbAmj4vr2rQDfA7+RgjwTMZKHs9Vrga8lRkbQ==
+  dependencies:
+    "@types/react" "*"
+    "@types/webpack-env" "*"
+
+"@types/webpack-env@*":
+  version "1.18.4"
+  resolved "https://registry.yarnpkg.com/@types/webpack-env/-/webpack-env-1.18.4.tgz#62879b0a9c653f9b1172d403b882f2045ecce032"
+  integrity sha512-I6e+9+HtWADAWeeJWDFQtdk4EVSAbj6Rtz4q8fJ7mSr1M0jzlFcs8/HZ+Xb5SHzVm1dxH7aUiI+A8kA8Gcrm0A==
+
 LykkeFramework@^0.3.40:
   version "0.3.58"
   resolved "https://registry.yarnpkg.com/LykkeFramework/-/LykkeFramework-0.3.58.tgz#163d04af0fd96cdfe54b7a44096908bacb64dd6d"

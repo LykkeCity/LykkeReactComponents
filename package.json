@@ -43,6 +43,7 @@
     "@types/recharts": "^1.0.27",
     "@types/storybook__addon-actions": "^3.0.3",
     "@types/storybook__addon-links": "^3.3.0",
+    "@types/storybook__react": "^3.0.9",
     "LykkeFramework": "^0.3.40",
     "babel-core": "^6.26.0",
     "bootstrap": "3.4.0",
