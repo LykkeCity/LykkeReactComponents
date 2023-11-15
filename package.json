@@ -1,5 +1,5 @@
 {
-  "name": "@githubswisschain/react-components",
+  "name": "@LykkeCity/react-components",
   "version": "0.9.9",
   "description": "React Components for Lykke projects",
   "keywords": [
@@ -11,7 +11,7 @@
     "url": "https://github.com/LykkeCity/LykkeReactComponents.git"
   },
   "publishConfig": {
-    "@githubswisschain:registry": "https://npm.pkg.github.com"
+    "@LykkeCity:registry": "https://npm.pkg.github.com"
   },
   "scripts": {
     "precommit": "lint-staged",
